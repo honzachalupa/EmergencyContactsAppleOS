@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2130A8242B85F67E00B76902"
-               BuildableName = "emergency-contacts.app"
-               BlueprintName = "emergency-contacts"
-               ReferencedContainer = "container:emergency-contacts.xcodeproj">
+               BlueprintIdentifier = "211386F92B87689A00F5422B"
+               BuildableName = "EmergencyContacts.app"
+               BlueprintName = "EmergencyContacts"
+               ReferencedContainer = "container:EmergencyContacts.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,16 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2130A8242B85F67E00B76902"
-            BuildableName = "emergency-contacts.app"
-            BlueprintName = "emergency-contacts"
-            ReferencedContainer = "container:emergency-contacts.xcodeproj">
+            BlueprintIdentifier = "211386F92B87689A00F5422B"
+            BuildableName = "EmergencyContacts.app"
+            BlueprintName = "EmergencyContacts"
+            ReferencedContainer = "container:EmergencyContacts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <LocationScenarioReference
-         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
-         referenceType = "1">
-      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -65,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2130A8242B85F67E00B76902"
-            BuildableName = "emergency-contacts.app"
-            BlueprintName = "emergency-contacts"
-            ReferencedContainer = "container:emergency-contacts.xcodeproj">
+            BlueprintIdentifier = "211386F92B87689A00F5422B"
+            BuildableName = "EmergencyContacts.app"
+            BlueprintName = "EmergencyContacts"
+            ReferencedContainer = "container:EmergencyContacts.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -4,20 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>EmergencyContacts_Watch Watch App.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>emergency-contacts.xcscheme_^#shared#^_</key>
+		<key>EmergencyContacts.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>EmergencyContactsWatch Watch App.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2130A8242B85F67E00B76902</key>
+		<key>211386F92B87689A00F5422B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2113870F2B8768F300F5422B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

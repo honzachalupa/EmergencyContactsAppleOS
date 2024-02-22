@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ItemsListView: View {
-    var data: [String: [DataItem]]
+    var data: [DataItem.CategoryType: [DataItem]]
     
     var body: some View {
         List {
@@ -12,8 +12,8 @@ struct ItemsListView: View {
                     }
                 } header: {
                     HStack {
-                        Image(systemName: "cross.fill").foregroundColor(colorForCategory(category))
-                        Text(category)
+                        Image(systemName: "cross.fill").foregroundColor(getCategoryColor(category))
+                        Text(getCategoryLabel(category))
                     }
                     .padding(.leading, -15)
                     .padding(.top, 15)

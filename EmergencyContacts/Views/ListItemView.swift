@@ -9,18 +9,18 @@ struct ListItemView: View {
             Text(item.name).font(.headline)
             Text("\(item.address.street), \(item.address.district)")
             
-            ControlGroup {
+            Spacer()
+            
+            HStack() {
+                Spacer()
+            
                 NavigateButton(name: item.name, coordinates: item.coordinates)
-                Divider()
-                WebButton(url: item.contact.url);
-                Divider()
-                CallButton(phoneNumbers: item.contact.phoneNumbers);
+                    .buttonStyle(.bordered)
+                WebButton(url: item.contact.url)
+                    .buttonStyle(.bordered)
+                CallButton(phoneNumbers: item.contact.phoneNumbers)
+                    .buttonStyle(.bordered)
             }
-            .controlGroupStyle(.navigation)
-            .background(.thickMaterial)
-            .foregroundColor(.white)
-            .cornerRadius(5)
-            .padding(.vertical, 10)
         }
         .padding(.vertical, 10)
     }
@@ -48,12 +48,11 @@ struct NavigateButton: View {
               launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
             )
         }
-        .padding(.leading, 10)
     }
 }
 
 struct WebButton: View {
-    let url: String?
+    let url: DataItem.ContactType.UrlType
 
     var body: some View {
         if let checkedUrl = url,
@@ -66,28 +65,24 @@ struct WebButton: View {
 }
 
 struct CallButton: View {
-    let phoneNumbers: [Int]?
+    let phoneNumbers: DataItem.ContactType.PhoneNumbersType
 
     var body: some View {
-        if let phoneNumbers = phoneNumbers {
-            if phoneNumbers.count == 1, let phoneURL = URL(string: "tel://\(formatPhoneNumber(phoneNumbers[0]))") {
-                Button("Call") {
-                    UIApplication.shared.open(phoneURL)
-                }
-                .padding(.trailing, 10)
-            } else if phoneNumbers.count > 1 {
-                Menu {
-                    ForEach(phoneNumbers, id: \.self) { phoneNumber in
-                        if let phoneURL = URL(string: "tel://\(formatPhoneNumber(phoneNumber))") {
-                            Button(formatPhoneNumber(phoneNumber)) {
-                                UIApplication.shared.open(phoneURL)
-                            }
+        if phoneNumbers.count == 1, let phoneURL = URL(string: "tel://\(formatPhoneNumber(phoneNumbers[0]))") {
+            Button("Call") {
+                UIApplication.shared.open(phoneURL)
+            }
+        } else if phoneNumbers.count > 1 {
+            Menu {
+                ForEach(phoneNumbers, id: \.self) { phoneNumber in
+                    if let phoneURL = URL(string: "tel://\(formatPhoneNumber(phoneNumber))") {
+                        Button(formatPhoneNumber(phoneNumber)) {
+                            UIApplication.shared.open(phoneURL)
                         }
                     }
-                } label: {
-                    Text("Call")
                 }
-                .padding(.trailing, 10)
+            } label: {
+                Text("Call")
             }
         }
     }

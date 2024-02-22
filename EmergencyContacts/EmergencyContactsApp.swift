@@ -1,6 +1,6 @@
 //
-//  EmergencyContacts_WatchApp.swift
-//  EmergencyContacts_Watch Watch App
+//  EmergencyContactsApp.swift
+//  EmergencyContacts
 //
 //  Created by Jan Chalupa on 22.02.2024.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct EmergencyContacts_Watch_Watch_AppApp: App {
+struct EmergencyContactsApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

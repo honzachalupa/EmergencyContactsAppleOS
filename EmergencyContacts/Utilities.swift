@@ -1,6 +1,19 @@
 import SwiftUI
 
-func colorForCategory(_ category: String) -> Color {
+func getCategoryLabel(_ category: DataItem.CategoryType) -> String {
+    switch category {
+        case "hospital":
+            return "Hospital"
+        case "pharmacy":
+            return "Pharmacy"
+        case "vet":
+            return "Vet"
+        default:
+            return category
+    }
+}
+
+func getCategoryColor(_ category: DataItem.CategoryType) -> Color {
     switch category {
         case "pharmacy":
             return .orange
@@ -11,7 +24,7 @@ func colorForCategory(_ category: String) -> Color {
     }
 }
 
-func formatPhoneNumber(_ value: Int) -> String {
+func formatPhoneNumber(_ value: DataItem.ContactType.PhoneNumberType) -> String {
     let digits = String(value).filter { "0"..."9" ~= $0 }
     let segmentLengths = [3, 3, 3]  // Define the segment lengths you want
     var formattedNumber = ""

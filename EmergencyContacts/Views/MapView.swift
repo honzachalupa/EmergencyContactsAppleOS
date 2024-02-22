@@ -2,7 +2,7 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    var data: [String: [DataItem]]
+    var data: [DataItem.CategoryType: [DataItem]]
     
     var body: some View {
         Map {
@@ -15,7 +15,7 @@ struct MapView: View {
                             latitude: item.coordinates[0],
                             longitude: item.coordinates[1]
                         )
-                    ).tint(colorForCategory(item.category))
+                    ).tint(getCategoryColor(item.category))
                 }
             }
         }

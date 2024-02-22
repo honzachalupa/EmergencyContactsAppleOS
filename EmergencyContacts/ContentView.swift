@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var data: [String: [DataItem]]?
+    @State private var data: [DataItem.CategoryType: [DataItem]]?
     @State private var errorMessage: String?
     @State private var isSheetOpened: Bool = true
     @State private var initialSheetDetent = PresentationDetent.medium
