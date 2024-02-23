@@ -51,8 +51,10 @@ struct ContentView_Previews: PreviewProvider {
         Group {
             ContentView()
                 .environment(\.locale, .init(identifier: "cs"))
+                .frame(minWidth: 800, minHeight: 600)
             ContentView()
                 .environment(\.locale, .init(identifier: "en"))
+                .frame(minWidth: 800, minHeight: 600)
         }
     }
 }

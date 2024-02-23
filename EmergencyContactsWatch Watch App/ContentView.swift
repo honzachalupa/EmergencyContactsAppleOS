@@ -24,6 +24,13 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ContentView()
+                .environment(\.locale, .init(identifier: "cs"))
+            ContentView()
+                .environment(\.locale, .init(identifier: "en"))
+        }
+    }
 }

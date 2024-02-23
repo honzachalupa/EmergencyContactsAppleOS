@@ -7,7 +7,12 @@ struct ListItemView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(item.name).font(.headline)
+            
+            Spacer()
+            
             Text("\(item.address.street), \(item.address.district)")
+            
+            Spacer()
             
             NavigateButton(name: item.name, coordinates: item.coordinates)
         }
@@ -38,5 +43,12 @@ struct NavigateButton: View {
             )
         }
         .padding(.leading, 10)
+        .buttonStyle(.bordered)
+    }
+}
+
+struct ListItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        ListItemView(item: mockedItems["hospital"]!.first!)
     }
 }
