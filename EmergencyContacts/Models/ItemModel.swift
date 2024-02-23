@@ -1,11 +1,9 @@
 struct Address: Decodable {
     typealias StreetType = String
     typealias DiscrictType = String
-    typealias CityType = String
     
     let street: StreetType
     let district: DiscrictType
-    let city: CityType
 }
 
 struct Contact: Decodable {

@@ -8,17 +8,30 @@ struct MapView: View {
         Map {
             ForEach(data.keys.sorted(), id: \.self) { category in
                 ForEach(data[category] ?? [], id: \.name) { item in
-                    Marker(
+                    Annotation(
                         item.name,
-                        systemImage: "cross.fill",
                         coordinate: CLLocationCoordinate2D(
                             latitude: item.coordinates[0],
                             longitude: item.coordinates[1]
                         )
-                    ).tint(getCategoryColor(item.category))
+                    ) {
+                        ZStack {
+                            Color(.white)
+                                .frame(width: 30, height: 30)
+                                .cornerRadius(.infinity)
+                            
+                            Image(systemName: "cross.fill")
+                                .foregroundColor(getCategoryColor(item.category))
+                        }
+                        .padding(.all, 20)
+                    }
                 }
             }
         }
         .mapControlVisibility(.hidden)
     }
+}
+
+#Preview {
+    MapView(data: mockedItems)
 }

@@ -9,6 +9,11 @@ struct ListItemView: View {
             Text(item.name).font(.headline)
             Text("\(item.address.street), \(item.address.district)")
             
+            MapView(data: [item.category: [item]])
+                .disabled(true)
+                .frame(height: 200)
+                .cornerRadius(8)
+            
             Spacer()
             
             HStack() {
@@ -55,12 +60,14 @@ struct WebButton: View {
     let url: DataItem.ContactType.UrlType
 
     var body: some View {
+#if canImport(UIKit)
         if let checkedUrl = url,
            let urlString = URL(string: checkedUrl) {
             Button("Website") {
                 UIApplication.shared.open(urlString)
             }
         }
+#endif
     }
 }
 
@@ -68,6 +75,7 @@ struct CallButton: View {
     let phoneNumbers: DataItem.ContactType.PhoneNumbersType
 
     var body: some View {
+#if canImport(UIKit)
         if phoneNumbers.count == 1, let phoneURL = URL(string: "tel://\(formatPhoneNumber(phoneNumbers[0]))") {
             Button("Call") {
                 UIApplication.shared.open(phoneURL)
@@ -85,5 +93,12 @@ struct CallButton: View {
                 Text("Call")
             }
         }
+#endif
+    }
+}
+
+struct ListItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        ListItemView(item: mockedItems["hospital"]!.first!)
     }
 }

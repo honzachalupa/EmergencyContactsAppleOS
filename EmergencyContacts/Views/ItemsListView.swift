@@ -15,11 +15,18 @@ struct ItemsListView: View {
                         Image(systemName: "cross.fill").foregroundColor(getCategoryColor(category))
                         Text(getCategoryLabel(category))
                     }
-                    .padding(.leading, -15)
                     .padding(.top, 15)
                 }
             }
         }
         .scrollIndicators(.hidden)
+    }
+}
+
+struct ItemsListView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ItemsListView(data: mockedItems)
+        }
     }
 }

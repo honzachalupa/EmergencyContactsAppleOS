@@ -15,7 +15,7 @@
 		211387152B8768F300F5422B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211387142B8768F300F5422B /* ContentView.swift */; };
 		211387172B8768F400F5422B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211387162B8768F400F5422B /* Assets.xcassets */; };
 		2113871A2B8768F400F5422B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211387192B8768F400F5422B /* Preview Assets.xcassets */; };
-		2113871D2B8768F400F5422B /* EmergencyContactsWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 211387102B8768F300F5422B /* EmergencyContactsWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2113871D2B8768F400F5422B /* EmergencyContactsWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 211387102B8768F300F5422B /* EmergencyContactsWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2145E7102B8769AE00494930 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7062B8769AD00494930 /* Utilities.swift */; };
 		2145E7112B8769AE00494930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2145E7072B8769AD00494930 /* Assets.xcassets */; };
 		2145E7122B8769AE00494930 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 2145E7082B8769AD00494930 /* Preview Content */; };
@@ -26,6 +26,8 @@
 		2145E7172B8769AE00494930 /* DataErrorHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataErrorHandlerView.swift */; };
 		2145E7182B8769AE00494930 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
 		2145E7192B8769AE00494930 /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70F2B8769AE00494930 /* ItemsListView.swift */; };
+		21DAFA472B88BA2400A52BED /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DAFA462B88BA2400A52BED /* DataMock.swift */; };
+		21DAFA482B88BA2400A52BED /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DAFA462B88BA2400A52BED /* DataMock.swift */; };
 		21F2BFD32B876BBD0007BF31 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70C2B8769AE00494930 /* ItemModel.swift */; };
 		21F2BFD42B876BC30007BF31 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7062B8769AD00494930 /* Utilities.swift */; };
 		21F2BFD62B876BD90007BF31 /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F2BFD52B876BD90007BF31 /* ItemsListView.swift */; };
@@ -82,6 +84,9 @@
 		2145E70D2B8769AE00494930 /* DataErrorHandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataErrorHandlerView.swift; sourceTree = "<group>"; };
 		2145E70E2B8769AE00494930 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2145E70F2B8769AE00494930 /* ItemsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsListView.swift; sourceTree = "<group>"; };
+		21DAFA432B88A95700A52BED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		21DAFA452B88A98400A52BED /* libswiftUIKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftUIKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib/swift/libswiftUIKit.tbd; sourceTree = DEVELOPER_DIR; };
+		21DAFA462B88BA2400A52BED /* DataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMock.swift; sourceTree = "<group>"; };
 		21F2BFD52B876BD90007BF31 /* ItemsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListView.swift; sourceTree = "<group>"; };
 		21F2BFD72B876BFE0007BF31 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +115,7 @@
 				211386FC2B87689A00F5422B /* EmergencyContacts */,
 				211387112B8768F300F5422B /* EmergencyContactsWatch Watch App */,
 				211386FB2B87689A00F5422B /* Products */,
+				21DAFA422B88A95600A52BED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +175,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		21DAFA422B88A95600A52BED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21DAFA452B88A98400A52BED /* libswiftUIKit.tbd */,
+				21DAFA432B88A95700A52BED /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		21F2BFDA2B8794C40007BF31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				2145E70C2B8769AE00494930 /* ItemModel.swift */,
+				21DAFA462B88BA2400A52BED /* DataMock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +328,7 @@
 				211387002B87689A00F5422B /* ContentView.swift in Sources */,
 				2145E7162B8769AE00494930 /* ItemModel.swift in Sources */,
 				211386FE2B87689A00F5422B /* EmergencyContactsApp.swift in Sources */,
+				21DAFA472B88BA2400A52BED /* DataMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +345,7 @@
 				21F2BFE32B87973D0007BF31 /* DataErrorHandlerView.swift in Sources */,
 				21F2BFE42B8797780007BF31 /* DataManager.swift in Sources */,
 				211387132B8768F300F5422B /* EmergencyContactsWatchApp.swift in Sources */,
+				21DAFA482B88BA2400A52BED /* DataMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +354,7 @@
 /* Begin PBXTargetDependency section */
 		2113871C2B8768F400F5422B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 2113870F2B8768F300F5422B /* EmergencyContactsWatch Watch App */;
 			targetProxy = 2113871B2B8768F400F5422B /* PBXContainerItemProxy */;
 		};

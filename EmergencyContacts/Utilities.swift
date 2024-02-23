@@ -3,11 +3,11 @@ import SwiftUI
 func getCategoryLabel(_ category: DataItem.CategoryType) -> String {
     switch category {
         case "hospital":
-            return "Hospital"
+            return String(localized: "Hospital")
         case "pharmacy":
-            return "Pharmacy"
+            return String(localized: "Pharmacy")
         case "vet":
-            return "Vet"
+            return String(localized: "Vet")
         default:
             return category
     }

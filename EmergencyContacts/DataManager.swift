@@ -1,7 +1,7 @@
 import Foundation
 
 class DataManager {
-    var data: [String: [DataItem]]?
+    var data: [DataItem.CategoryType: [DataItem]]?
     var errorMessage: String?
     
     func fetch(completion: @escaping (Result<[String: [DataItem]], Error>) -> Void) {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DataErrorHandlerView<Content: View>: View {
-    var data: [String: [DataItem]]?
+    var data: [DataItem.CategoryType: [DataItem]]?
     var errorMessage: String?
     
     @ViewBuilder let content: (_ data: [String: [DataItem]]) -> Content

@@ -8,24 +8,30 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                DataErrorHandlerView(data: data, errorMessage: errorMessage) { receivedData in
-                    if UIDevice.current.userInterfaceIdiom == .phone {
-                        MapView(data: receivedData)
-                            .sheet(isPresented: $isSheetOpened) {
-                                ItemsListView(data: receivedData)
-                                    .presentationDetents([.height(100), .medium, .large], selection: $initialSheetDetent)
-                                    .presentationBackground(.clear)
-                                    .interactiveDismissDisabled()
-                                    .presentationBackgroundInteraction(.enabled)
-                            }
-                    } else {
+                VStack {
+                    DataErrorHandlerView(data: data, errorMessage: errorMessage) { receivedData in
+#if canImport(UIKit)
+                        if UIDevice.current.userInterfaceIdiom == .phone {
+                            MapView(data: receivedData)
+                                .sheet(isPresented: $isSheetOpened) {
+                                    ItemsListView(data: receivedData)
+                                        .presentationDetents([.height(100), .medium, .large], selection: $initialSheetDetent)
+                                        .presentationBackground(.ultraThinMaterial)
+                                        .interactiveDismissDisabled()
+                                        .presentationBackgroundInteraction(.enabled)
+                                        .padding(.all, -10)
+                                }
+                        } else {
+                            MapView(data: receivedData)
+                            ItemsListView(data: receivedData)
+                        }
+#else
                         MapView(data: receivedData)
                         ItemsListView(data: receivedData)
+#endif
                     }
                 }
-            }
-            .navigationTitle("Emergency Contacts")
+                .navigationTitle("Emergency Contacts")
         }
         .onAppear {
             DataManager().fetch() { result in
@@ -42,6 +48,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .environment(\.locale, .init(identifier: "cs"))
+            ContentView()
+                .environment(\.locale, .init(identifier: "en"))
+        }
     }
 }
