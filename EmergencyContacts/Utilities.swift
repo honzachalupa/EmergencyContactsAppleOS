@@ -1,4 +1,5 @@
 import SwiftUI
+import MapKit
 
 func getCategoryLabel(_ category: DataItem.CategoryType) -> String {
     // print(category, "hospital", category == "hospital")
@@ -47,6 +48,19 @@ func formatPhoneNumber(_ value: DataItem.ContactType.PhoneNumberType) -> String 
 
     return "+420 \(formattedNumber)"
 }
+
+var fallbackPosition = MapCameraPosition.region(
+    MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 50.08804,
+            longitude: 14.42076
+        ),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.2,
+            longitudeDelta: 0.2
+        )
+    )
+)
 
 /* func windowMode() -> String {
  let screenRect = UIScreen.main.bounds

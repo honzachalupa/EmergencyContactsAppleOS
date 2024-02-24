@@ -13,14 +13,14 @@ struct ContentView: View {
 #if canImport(UIKit)
                         if UIDevice.current.userInterfaceIdiom == .phone {
                             MapView(data: receivedData)
-                                /* .sheet(isPresented: $isSheetOpened) {
+                                .sheet(isPresented: $isSheetOpened) {
                                     ItemsListView(data: receivedData)
                                         .presentationDetents([.height(100), .medium, .large], selection: $initialSheetDetent)
                                         .presentationBackground(.ultraThinMaterial)
                                         .interactiveDismissDisabled()
                                         .presentationBackgroundInteraction(.enabled)
                                         .padding(.all, -10)
-                                } */
+                                }
                         } else {
                             MapView(data: receivedData)
                             ItemsListView(data: receivedData)

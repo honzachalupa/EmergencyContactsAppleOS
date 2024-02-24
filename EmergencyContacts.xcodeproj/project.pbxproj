@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		211104912B8A8DB8008B3815 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211104902B8A8DB8008B3815 /* LocationManager.swift */; };
-		211104922B8A8DB8008B3815 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211104902B8A8DB8008B3815 /* LocationManager.swift */; };
 		211386FE2B87689A00F5422B /* EmergencyContactsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211386FD2B87689A00F5422B /* EmergencyContactsApp.swift */; };
 		211387002B87689A00F5422B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211386FF2B87689A00F5422B /* ContentView.swift */; };
 		211387062B87689B00F5422B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211387052B87689B00F5422B /* Preview Assets.xcassets */; };
@@ -64,7 +62,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		211104902B8A8DB8008B3815 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		211104932B8A8E56008B3815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		211386FA2B87689A00F5422B /* EmergencyContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmergencyContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		211386FD2B87689A00F5422B /* EmergencyContactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactsApp.swift; sourceTree = "<group>"; };
@@ -147,7 +144,6 @@
 				211387012B87689B00F5422B /* Assets.xcassets */,
 				211387032B87689B00F5422B /* EmergencyContacts.entitlements */,
 				211387042B87689B00F5422B /* Preview Content */,
-				211104902B8A8DB8008B3815 /* LocationManager.swift */,
 			);
 			path = EmergencyContacts;
 			sourceTree = "<group>";
@@ -326,7 +322,6 @@
 				2145E7142B8769AE00494930 /* ListItemView.swift in Sources */,
 				2145E7192B8769AE00494930 /* ItemsListView.swift in Sources */,
 				2145E7152B8769AE00494930 /* DataManager.swift in Sources */,
-				211104912B8A8DB8008B3815 /* LocationManager.swift in Sources */,
 				2145E7172B8769AE00494930 /* DataErrorHandlerView.swift in Sources */,
 				2145E7102B8769AE00494930 /* Utilities.swift in Sources */,
 				2145E7132B8769AE00494930 /* MapView.swift in Sources */,
@@ -344,7 +339,6 @@
 				21F2BFD42B876BC30007BF31 /* Utilities.swift in Sources */,
 				21F2BFD32B876BBD0007BF31 /* ItemModel.swift in Sources */,
 				21F2BFD62B876BD90007BF31 /* ItemsListView.swift in Sources */,
-				211104922B8A8DB8008B3815 /* LocationManager.swift in Sources */,
 				21F2BFD82B876BFE0007BF31 /* ListItemView.swift in Sources */,
 				211387152B8768F300F5422B /* ContentView.swift in Sources */,
 				21F2BFE22B87973B0007BF31 /* MapView.swift in Sources */,

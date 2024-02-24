@@ -4,56 +4,38 @@ import MapKit
 struct MapView: View {
     var data: [DataItem.CategoryType: [DataItem]]
     
-    // @StateObject var locationManager = LocationManager()
+    @State private var selection: Int?
     
     @State var position: MapCameraPosition = .userLocation(
-        followsHeading: true, fallback: MapCameraPosition.region(
-            MKCoordinateRegion(
-                center: CLLocationCoordinate2D(
-                    latitude: 50.08804,
-                    longitude: 14.42076
-                ),
-                span: MKCoordinateSpan(
-                    latitudeDelta: 0.2,
-                    longitudeDelta: 0.2
-                )
-            )
-        )
+        followsHeading: true, fallback: fallbackPosition
     )
     
     var body: some View {
             Map(
                 position: $position,
-                interactionModes: [.pan, .zoom]
+                interactionModes: [.pan, .zoom],
+                selection: $selection
             ) {
                 UserAnnotation()
                 
                 ForEach(data.keys.sorted(), id: \.self) { category in
                     ForEach(data[category] ?? [], id: \.name) { item in
-                        Annotation(
+                        Marker(
                             item.name,
+                            systemImage: "cross.fill",
                             coordinate: CLLocationCoordinate2D(
                                 latitude: item.coordinates[0],
                                 longitude: item.coordinates[1]
                             )
-                        ) {
-                            ZStack {
-                                Color(.white)
-                                    .frame(width: 30, height: 30)
-                                    .cornerRadius(.infinity)
-                                
-                                Image(systemName: "cross.fill")
-                                    .foregroundColor(getCategoryColor(item.category))
-                            }
-                            .padding(.all, 20)
-                        }
+                        )
+                        .tint(getCategoryColor(item.category))
+                        .tag(item.id)
                     }
                 }
             }
-            //.edgesIgnoringSafeArea(.all)
-            .mapControls {
-                MapCompass()
-                MapUserLocationButton()
+            .edgesIgnoringSafeArea(.all)
+            .onChange(of: selection) {
+                print("selection changed:", selection as Any)
             }
     }
 }
@@ -62,6 +44,55 @@ struct MapView: View {
     MapView(data: mockedItems)
 }
 
+
+// https://developer.apple.com/forums/thread/744107#744107021
+/* final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
+    @Published var location: CLLocation = CLLocation(
+        coordinate: CLLocationCoordinate2D(
+            latitude: 51.500685,
+            longitude: -0.124570
+        ),
+        altitude: .zero,
+        horizontalAccuracy: .zero,
+        verticalAccuracy: .zero,
+        timestamp: Date.now
+    )
+    
+    @Published var direction: CLLocationDirection = .zero
+    
+    private let locationManager = CLLocationManager()
+    
+    override init() {
+        super.init()
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+        Task { [weak self] in
+            try? await self?.requestAuthorization()
+        }
+    }
+    
+    func requestAuthorization() async throws {
+        if locationManager.authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locations.forEach { [weak self] location in
+            Task { @MainActor [weak self]  in
+                self?.location = location
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        Task { @MainActor [weak self]  in
+            self?.direction = newHeading.trueHeading
+        }
+    }
+    
+} */
 
 /*
     import SwiftUI

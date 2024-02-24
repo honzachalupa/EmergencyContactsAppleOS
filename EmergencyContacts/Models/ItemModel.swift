@@ -18,12 +18,14 @@ struct Contact: Decodable {
 }
 
 struct DataItem: Decodable {
+    typealias IdType = Int
     typealias CategoryType = String
     typealias NameType = String
     typealias AddressType = Address
     typealias ContactType = Contact
     typealias CoordinatesType = [Double]
-    
+
+    let id: IdType
     let category: CategoryType
     let name: NameType
     let address: AddressType
