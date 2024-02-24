@@ -1,7 +1,7 @@
 import SwiftUI
 
 func getCategoryLabel(_ category: DataItem.CategoryType) -> String {
-    print(category, "hospital", category == "hospital")
+    // print(category, "hospital", category == "hospital")
     
     switch category.lowercased() {
         case "hospital":

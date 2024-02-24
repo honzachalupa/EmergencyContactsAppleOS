@@ -4,31 +4,57 @@ import MapKit
 struct MapView: View {
     var data: [DataItem.CategoryType: [DataItem]]
     
+    // @StateObject var locationManager = LocationManager()
+    
+    @State var position: MapCameraPosition = .userLocation(
+        followsHeading: true, fallback: MapCameraPosition.region(
+            MKCoordinateRegion(
+                center: CLLocationCoordinate2D(
+                    latitude: 50.08804,
+                    longitude: 14.42076
+                ),
+                span: MKCoordinateSpan(
+                    latitudeDelta: 0.2,
+                    longitudeDelta: 0.2
+                )
+            )
+        )
+    )
+    
     var body: some View {
-        Map {
-            ForEach(data.keys.sorted(), id: \.self) { category in
-                ForEach(data[category] ?? [], id: \.name) { item in
-                    Annotation(
-                        item.name,
-                        coordinate: CLLocationCoordinate2D(
-                            latitude: item.coordinates[0],
-                            longitude: item.coordinates[1]
-                        )
-                    ) {
-                        ZStack {
-                            Color(.white)
-                                .frame(width: 30, height: 30)
-                                .cornerRadius(.infinity)
-                            
-                            Image(systemName: "cross.fill")
-                                .foregroundColor(getCategoryColor(item.category))
+            Map(
+                position: $position,
+                interactionModes: [.pan, .zoom]
+            ) {
+                UserAnnotation()
+                
+                ForEach(data.keys.sorted(), id: \.self) { category in
+                    ForEach(data[category] ?? [], id: \.name) { item in
+                        Annotation(
+                            item.name,
+                            coordinate: CLLocationCoordinate2D(
+                                latitude: item.coordinates[0],
+                                longitude: item.coordinates[1]
+                            )
+                        ) {
+                            ZStack {
+                                Color(.white)
+                                    .frame(width: 30, height: 30)
+                                    .cornerRadius(.infinity)
+                                
+                                Image(systemName: "cross.fill")
+                                    .foregroundColor(getCategoryColor(item.category))
+                            }
+                            .padding(.all, 20)
                         }
-                        .padding(.all, 20)
                     }
                 }
             }
-        }
-        .mapControlVisibility(.hidden)
+            //.edgesIgnoringSafeArea(.all)
+            .mapControls {
+                MapCompass()
+                MapUserLocationButton()
+            }
     }
 }
 
