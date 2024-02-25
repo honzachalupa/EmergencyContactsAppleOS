@@ -22,6 +22,8 @@
 		211387172B8768F400F5422B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211387162B8768F400F5422B /* Assets.xcassets */; };
 		2113871A2B8768F400F5422B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211387192B8768F400F5422B /* Preview Assets.xcassets */; };
 		2113871D2B8768F400F5422B /* EmergencyContactsWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 211387102B8768F300F5422B /* EmergencyContactsWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		212B83C72B8B9B53005B232C /* LookAroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B83C62B8B9B53005B232C /* LookAroundView.swift */; };
+		212B83C92B8BACAF005B232C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B83C82B8BACAF005B232C /* SettingsView.swift */; };
 		2145E7102B8769AE00494930 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7062B8769AD00494930 /* Utilities.swift */; };
 		2145E7112B8769AE00494930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2145E7072B8769AD00494930 /* Assets.xcassets */; };
 		2145E7122B8769AE00494930 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 2145E7082B8769AD00494930 /* Preview Content */; };
@@ -107,6 +109,8 @@
 		211387142B8768F300F5422B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		211387162B8768F400F5422B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		211387192B8768F400F5422B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		212B83C62B8B9B53005B232C /* LookAroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundView.swift; sourceTree = "<group>"; };
+		212B83C82B8BACAF005B232C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		2145E7062B8769AD00494930 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2145E7072B8769AD00494930 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2145E7082B8769AD00494930 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 				2145E70F2B8769AE00494930 /* ItemsListView.swift */,
 				2145E7092B8769AD00494930 /* MapView.swift */,
 				2145E70D2B8769AE00494930 /* DataErrorHandlerView.swift */,
+				212B83C62B8B9B53005B232C /* LookAroundView.swift */,
+				212B83C82B8BACAF005B232C /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,11 +427,13 @@
 				2145E7142B8769AE00494930 /* ListItemView.swift in Sources */,
 				2145E7192B8769AE00494930 /* ItemsListView.swift in Sources */,
 				2145E7152B8769AE00494930 /* DataManager.swift in Sources */,
+				212B83C72B8B9B53005B232C /* LookAroundView.swift in Sources */,
 				2145E7172B8769AE00494930 /* DataErrorHandlerView.swift in Sources */,
 				2145E7102B8769AE00494930 /* Utilities.swift in Sources */,
 				2145E7132B8769AE00494930 /* MapView.swift in Sources */,
 				211387002B87689A00F5422B /* ContentView.swift in Sources */,
 				2145E7162B8769AE00494930 /* ItemModel.swift in Sources */,
+				212B83C92B8BACAF005B232C /* SettingsView.swift in Sources */,
 				211386FE2B87689A00F5422B /* EmergencyContactsApp.swift in Sources */,
 				21DAFA472B88BA2400A52BED /* DataMock.swift in Sources */,
 			);
@@ -659,7 +667,10 @@
 				INFOPLIST_FILE = EmergencyContacts/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Nouzové kontakty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vaše poloha bude využita pro nalezení nejblížších míst.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = temp;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -671,10 +682,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = janchalupa.EmergencyContacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -708,7 +719,10 @@
 				INFOPLIST_FILE = EmergencyContacts/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Nouzové kontakty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vaše poloha bude využita pro nalezení nejblížších míst.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = temp;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -720,10 +734,10 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = janchalupa.EmergencyContacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";

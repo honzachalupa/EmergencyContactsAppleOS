@@ -78,6 +78,16 @@
         }
       }
     },
+    "Map" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mapa"
+          }
+        }
+      }
+    },
     "Navigate" : {
       "localizations" : {
         "cs" : {
@@ -87,6 +97,9 @@
           }
         }
       }
+    },
+    "No preview available" : {
+
     },
     "Pharmacy" : {
       "extractionState" : "manual",
@@ -119,6 +132,9 @@
           }
         }
       }
+    },
+    "xyxyx" : {
+
     }
   },
   "version" : "1.0"

@@ -9,10 +9,7 @@ struct ListItemView: View {
             Text(item.name).font(.headline)
             Text("\(item.address.street), \(item.address.district)")
             
-            MapView(data: [item.category: [item]])
-                .disabled(true)
-                .frame(height: 200)
-                .cornerRadius(8)
+            // LookAroundView(item: item)
             
             Spacer()
             

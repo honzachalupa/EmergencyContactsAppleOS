@@ -4,39 +4,45 @@ import MapKit
 struct MapView: View {
     var data: [DataItem.CategoryType: [DataItem]]
     
+    let locationManager = CLLocationManager()
+    
+    @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State private var selection: Int?
     
-    @State var position: MapCameraPosition = .userLocation(
-        followsHeading: true, fallback: fallbackPosition
-    )
-    
     var body: some View {
-            Map(
-                position: $position,
-                interactionModes: [.pan, .zoom],
-                selection: $selection
-            ) {
-                UserAnnotation()
-                
-                ForEach(data.keys.sorted(), id: \.self) { category in
-                    ForEach(data[category] ?? [], id: \.name) { item in
-                        Marker(
-                            item.name,
-                            systemImage: "cross.fill",
-                            coordinate: CLLocationCoordinate2D(
-                                latitude: item.coordinates[0],
-                                longitude: item.coordinates[1]
-                            )
+        Map(
+            initialPosition: position,
+            interactionModes: [.pan, .zoom],
+            selection: $selection
+        ) {
+            UserAnnotation()
+            
+            ForEach(data.keys.sorted(), id: \.self) { category in
+                ForEach(data[category] ?? [], id: \.name) { item in
+                    Marker(
+                        item.name,
+                        systemImage: "cross.fill",
+                        coordinate: CLLocationCoordinate2D(
+                            latitude: item.coordinates[0],
+                            longitude: item.coordinates[1]
                         )
-                        .tint(getCategoryColor(item.category))
-                        .tag(item.id)
-                    }
+                    )
+                    .tint(getCategoryColor(item.category))
+                    .tag(item.id)
                 }
             }
-            .edgesIgnoringSafeArea(.all)
-            .onChange(of: selection) {
-                print("selection changed:", selection as Any)
-            }
+        }
+        .mapStyle(.standard(elevation: .realistic))
+        // .edgesIgnoringSafeArea(.all)
+        .mapControls {
+            MapUserLocationButton()
+        }
+        .onAppear {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        .onChange(of: selection) {
+            print("selection changed:", selection as Any)
+        }
     }
 }
 

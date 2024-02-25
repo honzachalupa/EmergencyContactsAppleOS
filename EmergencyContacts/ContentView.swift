@@ -31,7 +31,15 @@ struct ContentView: View {
 #endif
                     }
                 }
-                .navigationTitle("Emergency Contacts")
+                .navigationTitle("Map")
+                .toolbarTitleDisplayMode(.inlineLarge)
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        NavigationLink(destination: SettingsView()) {
+                            Image(systemName: "gear")
+                        }
+                    }
+                }
         }
         .onAppear {
             DataManager().fetch() { result in
