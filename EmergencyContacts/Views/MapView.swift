@@ -44,7 +44,6 @@ struct MapView: View {
     MapView(data: mockedItems)
 }
 
-
 // https://developer.apple.com/forums/thread/744107#744107021
 /* final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var location: CLLocation = CLLocation(
