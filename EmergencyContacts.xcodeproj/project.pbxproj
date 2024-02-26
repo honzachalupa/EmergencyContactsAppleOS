@@ -21,7 +21,7 @@
 		211387152B8768F300F5422B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211387142B8768F300F5422B /* ContentView.swift */; };
 		211387172B8768F400F5422B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211387162B8768F400F5422B /* Assets.xcassets */; };
 		2113871A2B8768F400F5422B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 211387192B8768F400F5422B /* Preview Assets.xcassets */; };
-		2113871D2B8768F400F5422B /* EmergencyContactsWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 211387102B8768F300F5422B /* EmergencyContactsWatch Watch App.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2113871D2B8768F400F5422B /* EmergencyContactsWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 211387102B8768F300F5422B /* EmergencyContactsWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		212B83C72B8B9B53005B232C /* LookAroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B83C62B8B9B53005B232C /* LookAroundView.swift */; };
 		212B83C92B8BACAF005B232C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B83C82B8BACAF005B232C /* SettingsView.swift */; };
 		2145E7102B8769AE00494930 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7062B8769AD00494930 /* Utilities.swift */; };
@@ -31,9 +31,10 @@
 		2145E7142B8769AE00494930 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70A2B8769AD00494930 /* ListItemView.swift */; };
 		2145E7152B8769AE00494930 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataManager.swift */; };
 		2145E7162B8769AE00494930 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70C2B8769AE00494930 /* ItemModel.swift */; };
-		2145E7172B8769AE00494930 /* DataErrorHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataErrorHandlerView.swift */; };
+		2145E7172B8769AE00494930 /* DataProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataProviderView.swift */; };
 		2145E7182B8769AE00494930 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
 		2145E7192B8769AE00494930 /* ItemsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70F2B8769AE00494930 /* ItemsListView.swift */; };
+		21869C802B8C92800009810E /* IzsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21869C7F2B8C92800009810E /* IzsView.swift */; };
 		21DAFA472B88BA2400A52BED /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DAFA462B88BA2400A52BED /* DataMock.swift */; };
 		21DAFA482B88BA2400A52BED /* DataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21DAFA462B88BA2400A52BED /* DataMock.swift */; };
 		21F2BFD32B876BBD0007BF31 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70C2B8769AE00494930 /* ItemModel.swift */; };
@@ -42,7 +43,7 @@
 		21F2BFD82B876BFE0007BF31 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F2BFD72B876BFE0007BF31 /* ListItemView.swift */; };
 		21F2BFD92B876C650007BF31 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
 		21F2BFE22B87973B0007BF31 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7092B8769AD00494930 /* MapView.swift */; };
-		21F2BFE32B87973D0007BF31 /* DataErrorHandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataErrorHandlerView.swift */; };
+		21F2BFE32B87973D0007BF31 /* DataProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataProviderView.swift */; };
 		21F2BFE42B8797780007BF31 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,9 +119,10 @@
 		2145E70A2B8769AD00494930 /* ListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		2145E70B2B8769AD00494930 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		2145E70C2B8769AE00494930 /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
-		2145E70D2B8769AE00494930 /* DataErrorHandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataErrorHandlerView.swift; sourceTree = "<group>"; };
+		2145E70D2B8769AE00494930 /* DataProviderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderView.swift; sourceTree = "<group>"; };
 		2145E70E2B8769AE00494930 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2145E70F2B8769AE00494930 /* ItemsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsListView.swift; sourceTree = "<group>"; };
+		21869C7F2B8C92800009810E /* IzsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IzsView.swift; sourceTree = "<group>"; };
 		21DAFA432B88A95700A52BED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		21DAFA452B88A98400A52BED /* libswiftUIKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftUIKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib/swift/libswiftUIKit.tbd; sourceTree = DEVELOPER_DIR; };
 		21DAFA462B88BA2400A52BED /* DataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMock.swift; sourceTree = "<group>"; };
@@ -253,9 +255,10 @@
 				2145E70A2B8769AD00494930 /* ListItemView.swift */,
 				2145E70F2B8769AE00494930 /* ItemsListView.swift */,
 				2145E7092B8769AD00494930 /* MapView.swift */,
-				2145E70D2B8769AE00494930 /* DataErrorHandlerView.swift */,
+				2145E70D2B8769AE00494930 /* DataProviderView.swift */,
 				212B83C62B8B9B53005B232C /* LookAroundView.swift */,
 				212B83C82B8BACAF005B232C /* SettingsView.swift */,
+				21869C7F2B8C92800009810E /* IzsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -427,8 +430,9 @@
 				2145E7142B8769AE00494930 /* ListItemView.swift in Sources */,
 				2145E7192B8769AE00494930 /* ItemsListView.swift in Sources */,
 				2145E7152B8769AE00494930 /* DataManager.swift in Sources */,
+				21869C802B8C92800009810E /* IzsView.swift in Sources */,
 				212B83C72B8B9B53005B232C /* LookAroundView.swift in Sources */,
-				2145E7172B8769AE00494930 /* DataErrorHandlerView.swift in Sources */,
+				2145E7172B8769AE00494930 /* DataProviderView.swift in Sources */,
 				2145E7102B8769AE00494930 /* Utilities.swift in Sources */,
 				2145E7132B8769AE00494930 /* MapView.swift in Sources */,
 				211387002B87689A00F5422B /* ContentView.swift in Sources */,
@@ -449,7 +453,7 @@
 				21F2BFD82B876BFE0007BF31 /* ListItemView.swift in Sources */,
 				211387152B8768F300F5422B /* ContentView.swift in Sources */,
 				21F2BFE22B87973B0007BF31 /* MapView.swift in Sources */,
-				21F2BFE32B87973D0007BF31 /* DataErrorHandlerView.swift in Sources */,
+				21F2BFE32B87973D0007BF31 /* DataProviderView.swift in Sources */,
 				21F2BFE42B8797780007BF31 /* DataManager.swift in Sources */,
 				211387132B8768F300F5422B /* EmergencyContactsWatchApp.swift in Sources */,
 				21DAFA482B88BA2400A52BED /* DataMock.swift in Sources */,
@@ -466,7 +470,6 @@
 		};
 		2113871C2B8768F400F5422B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 2113870F2B8768F300F5422B /* EmergencyContactsWatch Watch App */;
 			targetProxy = 2113871B2B8768F400F5422B /* PBXContainerItemProxy */;
 		};
@@ -486,7 +489,7 @@
 				INFOPLIST_FILE = EmergencyContactsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EmergencyContactsWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,7 +519,7 @@
 				INFOPLIST_FILE = EmergencyContactsWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EmergencyContactsWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,8 +694,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -743,8 +747,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

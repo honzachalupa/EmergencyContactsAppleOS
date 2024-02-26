@@ -40,5 +40,5 @@ struct LookAroundView: View {
 }
 
 #Preview {
-    LookAroundView(item: mockedItems["hospital"]!.first!)
+    LookAroundView(item: mockedItems.first!)
 }

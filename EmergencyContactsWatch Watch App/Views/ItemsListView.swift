@@ -1,13 +1,19 @@
 import SwiftUI
 
 struct ItemsListView: View {
-    var data: [DataItem.CategoryType: [DataItem]]
+    var data: [DataItem]
+    let dataGrouped: [DataItem.CategoryType: [DataItem]]
+    
+    init(data: [DataItem]) {
+        self.data = data
+        self.dataGrouped = Dictionary(grouping: data, by: { $0.category })
+    }
     
     var body: some View {
         List {
-            ForEach(data.keys.sorted(), id: \.self) { category in
+            ForEach(dataGrouped.keys.sorted(), id: \.self) { category in
                 Section {
-                    ForEach(data[category] ?? [], id: \.name) { item in
+                    ForEach(dataGrouped[category] ?? [], id: \.name) { item in
                         ListItemView(item: item)
                     }
                 } header: {

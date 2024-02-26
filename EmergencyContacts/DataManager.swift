@@ -1,10 +1,10 @@
 import Foundation
 
 class DataManager {
-    var data: [DataItem.CategoryType: [DataItem]]?
+    var data: [DataItem]?
     var errorMessage: String?
     
-    func fetch(completion: @escaping (Result<[String: [DataItem]], Error>) -> Void) {
+    func fetch(completion: @escaping (Result<[DataItem], Error>) -> Void) {
         guard let url = URL(string: "https://www.nouzovekontakty.cz/api/json") else {
             self.errorMessage = "Invalid URL"
             completion(.failure(NSError(domain: "DataManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
@@ -40,8 +40,8 @@ class DataManager {
                     let jsonData = try decoder.decode([DataItem].self, from: data)
                     
                     DispatchQueue.main.async {
-                        self.data = Dictionary(grouping: jsonData, by: { $0.category })
-                        completion(.success(self.data ?? [:]))
+                        self.data = jsonData
+                        completion(.success(jsonData))
                     }
                 } catch {
                     DispatchQueue.main.async {

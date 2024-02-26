@@ -1,14 +1,55 @@
 import SwiftUI
 
+enum TabLabels: String {
+    case services
+    case map
+    case list
+}
+
 struct ContentView: View {
-    @State private var data: [DataItem.CategoryType: [DataItem]]?
-    @State private var errorMessage: String?
     @State private var isSheetOpened: Bool = true
     @State private var initialSheetDetent = PresentationDetent.medium
+    @State private var selectedTabKey: TabLabels = .map
+    
+    func navigationTitleForSelectedTab(_ key: TabLabels) -> String {
+        switch key {
+            case .services:
+                return "Phone Numbers"
+            case .map:
+                return "Map"
+            case .list:
+                return "List"
+        }
+    }
     
     var body: some View {
         NavigationStack {
-                VStack {
+            DataProviderView() { receivedData in
+                TabView(selection: $selectedTabKey) {
+                    IzsView().tabItem {
+                        Label(navigationTitleForSelectedTab(.services), systemImage: "phone.fill")
+                    }.tag(TabLabels.services)
+                    
+                    MapView(data: receivedData).tabItem {
+                        Label(navigationTitleForSelectedTab(.map), systemImage: "map")
+                    }.tag(TabLabels.map)
+                    
+                    ItemsListView(data: receivedData).tabItem {
+                        Label(navigationTitleForSelectedTab(.list),systemImage: "list.bullet")
+                    }.tag(TabLabels.list)
+                }
+                .navigationTitle(navigationTitleForSelectedTab(selectedTabKey))
+                .toolbarTitleDisplayMode(.inlineLarge)
+                .toolbar {
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        NavigationLink(destination: SettingsView()) {
+                            Image(systemName: "gear")
+                        }
+                    }
+                }
+            }
+            
+                /* VStack {
                     DataErrorHandlerView(data: data, errorMessage: errorMessage) { receivedData in
 #if canImport(UIKit)
                         if UIDevice.current.userInterfaceIdiom == .phone {
@@ -39,17 +80,7 @@ struct ContentView: View {
                             Image(systemName: "gear")
                         }
                     }
-                }
-        }
-        .onAppear {
-            DataManager().fetch() { result in
-                switch result {
-                    case .success(let fetchedData):
-                        self.data = fetchedData
-                    case .failure(let error):
-                        self.errorMessage = "Failed to fetch data: \(error.localizedDescription)"
-                }
-            }
+                } */
         }
     }
 }
@@ -59,10 +90,9 @@ struct ContentView_Previews: PreviewProvider {
         Group {
             ContentView()
                 .environment(\.locale, .init(identifier: "cs"))
-                .frame(minWidth: 800, minHeight: 600)
+            
             ContentView()
                 .environment(\.locale, .init(identifier: "en"))
-                .frame(minWidth: 800, minHeight: 600)
         }
     }
 }

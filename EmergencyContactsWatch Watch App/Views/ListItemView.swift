@@ -28,10 +28,7 @@ struct NavigateButton: View {
         Button("Navigate") {
             let destination = MKMapItem(
                 placemark: MKPlacemark(
-                    coordinate: CLLocationCoordinate2D(
-                        latitude: coordinates[0],
-                        longitude: coordinates[1]
-                    )
+                    coordinate: coordinates
                 )
             )
             
@@ -39,7 +36,9 @@ struct NavigateButton: View {
                     
             MKMapItem.openMaps(
               with: [destination],
-              launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+              launchOptions: [
+                MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving
+              ]
             )
         }
         .padding(.leading, 10)
@@ -49,6 +48,6 @@ struct NavigateButton: View {
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(item: mockedItems["hospital"]!.first!)
+        ListItemView(item: mockedItems.first!)
     }
 }

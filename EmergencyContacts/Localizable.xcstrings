@@ -11,6 +11,9 @@
         }
       }
     },
+    "(%@)" : {
+
+    },
     "%@, %@" : {
       "localizations" : {
         "cs" : {
@@ -27,12 +30,56 @@
         }
       }
     },
+    "All" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vše"
+          }
+        }
+      }
+    },
     "Call" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zavolat"
+          }
+        }
+      }
+    },
+    "Category" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ"
+          }
+        }
+      }
+    },
+    "District" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Městská část"
+          }
+        }
+      }
+    },
+    "Districts" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Městské části"
           }
         }
       }
@@ -57,6 +104,28 @@
         }
       }
     },
+    "Filter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtr"
+          }
+        }
+      }
+    },
+    "Firefighters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hasiči"
+          }
+        }
+      }
+    },
     "Hospital" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -64,6 +133,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pohotovost"
+          }
+        }
+      }
+    },
+    "International Emergency Service" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mezinárodní linka"
+          }
+        }
+      }
+    },
+    "List" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seznam"
           }
         }
       }
@@ -79,11 +170,34 @@
       }
     },
     "Map" : {
+      "extractionState" : "stale",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mapa"
+          }
+        }
+      }
+    },
+    "Medical Service" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Záchranná služba"
+          }
+        }
+      }
+    },
+    "Municipal Police" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Městská policie"
           }
         }
       }
@@ -99,7 +213,14 @@
       }
     },
     "No preview available" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Náhled není k dispozici"
+          }
+        }
+      }
     },
     "Pharmacy" : {
       "extractionState" : "manual",
@@ -108,6 +229,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Non-stop lékárna"
+          }
+        }
+      }
+    },
+    "Phone Numbers" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Telefonní čísla"
+          }
+        }
+      }
+    },
+    "Police" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Policie"
+          }
+        }
+      }
+    },
+    "Reset" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resetovat"
           }
         }
       }
@@ -132,9 +286,6 @@
           }
         }
       }
-    },
-    "xyxyx" : {
-
     }
   },
   "version" : "1.0"
