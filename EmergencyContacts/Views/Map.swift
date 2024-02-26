@@ -7,7 +7,7 @@ struct MapView: View {
     
     init(data: [DataItem]) {
         self.data = data
-        self.dataGrouped = Dictionary(grouping: data, by: { $0.category })
+        self.dataGrouped = groupByCategory(data)
     }
     
     let locationManager = CLLocationManager()
@@ -45,7 +45,7 @@ struct MapView: View {
         .sheet(item: $selectedMarker) { item in
             if let marker = selectedMarker {
                 ZStack {
-                    ListItemView(item: marker)
+                    ItemsList_ItemView(item: marker)
                 }
                 .padding()
                 .presentationDetents([.height(200)])

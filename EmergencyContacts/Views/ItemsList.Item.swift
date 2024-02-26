@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct ListItemView: View {
+struct ItemsList_ItemView: View {
     var item: DataItem
 
     var body: some View {
@@ -94,8 +94,8 @@ struct CallButton: View {
     }
 }
 
-struct ListItemView_Previews: PreviewProvider {
+struct ItemsList_ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(item: mockedItems.first!)
+        ItemsList_ItemView(item: mockedItems.first!)
     }
 }

@@ -1,9 +1,20 @@
 import SwiftUI
 import MapKit
 
+var fallbackPosition = MapCameraPosition.region(
+    MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 50.08804,
+            longitude: 14.42076
+        ),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.2,
+            longitudeDelta: 0.2
+        )
+    )
+)
+
 func getCategoryLabel(_ category: DataItem.CategoryType) -> String {
-    // print(category, "hospital", category == "hospital")
-    
     switch category.lowercased() {
         case "hospital":
             return String(localized: "Hospital")
@@ -49,18 +60,19 @@ func formatPhoneNumber(_ value: DataItem.ContactType.PhoneNumberType) -> String 
     return "+420 \(formattedNumber)"
 }
 
-var fallbackPosition = MapCameraPosition.region(
-    MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 50.08804,
-            longitude: 14.42076
-        ),
-        span: MKCoordinateSpan(
-            latitudeDelta: 0.2,
-            longitudeDelta: 0.2
-        )
-    )
-)
+func groupByCategory(_ data: [DataItem]) -> [DataItem.CategoryType: [DataItem]] {
+    return Dictionary(grouping: data, by: { $0.category })
+}
+
+func openSystemSettings() {
+#if os(iOS)
+    if let bundleId = Bundle.main.bundleIdentifier,
+        let url = URL(string: "\(UIApplication.openSettingsURLString)&path=LOCATION/\(bundleId)")
+    {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+#endif
+}
 
 extension Array where Element: Hashable {
   func unique() -> [Element] {

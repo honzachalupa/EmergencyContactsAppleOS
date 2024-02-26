@@ -6,7 +6,7 @@ struct ItemsListView: View {
     
     init(data: [DataItem]) {
         self.data = data
-        self.dataGrouped = Dictionary(grouping: data, by: { $0.category })
+        self.dataGrouped = groupByCategory(data)
     }
     
     var body: some View {
@@ -14,7 +14,7 @@ struct ItemsListView: View {
             ForEach(dataGrouped.keys.sorted(), id: \.self) { category in
                 Section {
                     ForEach(dataGrouped[category] ?? [], id: \.name) { item in
-                        ListItemView(item: item)
+                        ItemsList_ItemView(item: item)
                     }
                 } header: {
                     HStack {

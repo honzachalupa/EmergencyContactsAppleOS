@@ -14,11 +14,11 @@ struct ContentView: View {
     func navigationTitleForSelectedTab(_ key: TabLabels) -> String {
         switch key {
             case .services:
-                return "Phone Numbers"
+                return String(localized: "Phone Numbers")
             case .map:
-                return "Map"
+                return String(localized: "Map")
             case .list:
-                return "List"
+                return String(localized: "List")
         }
     }
     
