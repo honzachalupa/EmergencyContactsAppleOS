@@ -2,6 +2,8 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    var isZoomEnabled: Bool = true
+    
     let locationManager = CLLocationManager()
     
     @StateObject var store = DataStore()
@@ -12,7 +14,7 @@ struct MapView: View {
     var body: some View {
         Map(
             initialPosition: position,
-            interactionModes: [.pan],
+            interactionModes: isZoomEnabled ? [.pan, .zoom] : [.pan],
             selection: $selectedMarker
         ) {
             UserAnnotation()

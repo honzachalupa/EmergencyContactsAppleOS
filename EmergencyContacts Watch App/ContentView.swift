@@ -30,7 +30,7 @@ struct ContentView: View {
                         Label(navigationTitleForSelectedTab(.services), systemImage: "phone.fill")
                     }.tag(TabKey.services)
                     
-                    MapView().tabItem {
+                    MapView(isZoomEnabled: false).tabItem {
                         Label(navigationTitleForSelectedTab(.map), systemImage: "map")
                     }.tag(TabKey.map)
                     

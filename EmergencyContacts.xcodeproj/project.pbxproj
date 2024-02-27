@@ -129,6 +129,8 @@
 		21869C7F2B8C92800009810E /* Izs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Izs.swift; sourceTree = "<group>"; };
 		219F1DC62B8E18B200DD5EFD /* Izs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Izs.swift; sourceTree = "<group>"; };
 		219F1DC82B8E18C400DD5EFD /* Izs.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Izs.Item.swift; sourceTree = "<group>"; };
+		21AEFFE12B8E7FF700A9C582 /* EmergencyContactsWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmergencyContactsWidgetExtension.entitlements; sourceTree = "<group>"; };
+		21AEFFE22B8E800B00A9C582 /* EmergencyContactsWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EmergencyContactsWatch Watch App.entitlements"; sourceTree = "<group>"; };
 		21DAFA432B88A95700A52BED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		21DAFA452B88A98400A52BED /* libswiftUIKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftUIKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib/swift/libswiftUIKit.tbd; sourceTree = DEVELOPER_DIR; };
 		21EB96882B8CCD8F0075A2F5 /* ItemsList.Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsList.Filter.swift; sourceTree = "<group>"; };
@@ -180,6 +182,8 @@
 		211386F12B87689A00F5422B = {
 			isa = PBXGroup;
 			children = (
+				21AEFFE22B8E800B00A9C582 /* EmergencyContactsWatch Watch App.entitlements */,
+				21AEFFE12B8E7FF700A9C582 /* EmergencyContactsWidgetExtension.entitlements */,
 				211386FC2B87689A00F5422B /* EmergencyContacts */,
 				211387112B8768F300F5422B /* EmergencyContacts Watch App */,
 				210249602B8B75A4000A37EE /* EmergencyContactsWidget */,
@@ -505,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EmergencyContactsWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -535,6 +540,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EmergencyContactsWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -694,10 +700,10 @@
 				INFOPLIST_FILE = EmergencyContacts/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Nouzové kontakty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = temp;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = temp;
-				INFOPLIST_KEY_NSLocationUsageDescription = temp;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -709,7 +715,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -747,10 +753,10 @@
 				INFOPLIST_FILE = EmergencyContacts/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Nouzové kontakty";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = temp;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = temp;
-				INFOPLIST_KEY_NSLocationUsageDescription = temp;
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = temp;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -762,7 +768,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -786,6 +792,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "EmergencyContactsWatch Watch App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -810,7 +817,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
@@ -819,6 +826,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "EmergencyContactsWatch Watch App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -844,7 +852,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};

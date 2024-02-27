@@ -95,9 +95,6 @@
         }
       }
     },
-    "Doporučení: Uložte si tyto kontakty přímo do kontaktů ve vašem iPhone, ať je máte vždy po ruce." : {
-
-    },
     "Emergency Contacts" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -274,6 +271,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Policie"
+          }
+        }
+      }
+    },
+    "Recommendation: Save these contacts directly into your iPhone contacts so you always have them at hand." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doporučení: Uložte si tyto kontakty přímo do kontaktů ve vašem iPhone, ať je máte vždy po ruce."
           }
         }
       }
