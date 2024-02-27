@@ -12,7 +12,7 @@ struct IzsView: View {
                 }
             }
             
-            Text("Doporučení: Uložte si tyto kontakty přímo do kontaktů ve vašem iPhone, ať je máte vždy hned poruce")
+            Text("Doporučení: Uložte si tyto kontakty přímo do kontaktů ve vašem iPhone, ať je máte vždy po ruce.")
                 .font(.footnote)
                 .opacity(0.6)
                 .padding(.top, 10)

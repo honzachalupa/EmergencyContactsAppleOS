@@ -35,6 +35,9 @@
 		2145E7182B8769AE00494930 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
 		2145E7192B8769AE00494930 /* ItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70F2B8769AE00494930 /* ItemsList.swift */; };
 		21869C802B8C92800009810E /* Izs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21869C7F2B8C92800009810E /* Izs.swift */; };
+		219F1DC72B8E18B200DD5EFD /* Izs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219F1DC62B8E18B200DD5EFD /* Izs.swift */; };
+		219F1DC92B8E18C400DD5EFD /* Izs.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219F1DC82B8E18C400DD5EFD /* Izs.Item.swift */; };
+		219F1DCA2B8E18DA00DD5EFD /* IzsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EB968D2B8CD8420075A2F5 /* IzsItem.swift */; };
 		21EB96892B8CCD8F0075A2F5 /* ItemsList.Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EB96882B8CCD8F0075A2F5 /* ItemsList.Filter.swift */; };
 		21EB968C2B8CD7FF0075A2F5 /* Izs.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EB968B2B8CD7FF0075A2F5 /* Izs.Item.swift */; };
 		21EB968E2B8CD8420075A2F5 /* IzsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EB968D2B8CD8420075A2F5 /* IzsItem.swift */; };
@@ -124,6 +127,8 @@
 		2145E70E2B8769AE00494930 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2145E70F2B8769AE00494930 /* ItemsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsList.swift; sourceTree = "<group>"; };
 		21869C7F2B8C92800009810E /* Izs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Izs.swift; sourceTree = "<group>"; };
+		219F1DC62B8E18B200DD5EFD /* Izs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Izs.swift; sourceTree = "<group>"; };
+		219F1DC82B8E18C400DD5EFD /* Izs.Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Izs.Item.swift; sourceTree = "<group>"; };
 		21DAFA432B88A95700A52BED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		21DAFA452B88A98400A52BED /* libswiftUIKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftUIKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/usr/lib/swift/libswiftUIKit.tbd; sourceTree = DEVELOPER_DIR; };
 		21EB96882B8CCD8F0075A2F5 /* ItemsList.Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsList.Filter.swift; sourceTree = "<group>"; };
@@ -176,7 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				211386FC2B87689A00F5422B /* EmergencyContacts */,
-				211387112B8768F300F5422B /* EmergencyContactsWatch Watch App */,
+				211387112B8768F300F5422B /* EmergencyContacts Watch App */,
 				210249602B8B75A4000A37EE /* EmergencyContactsWidget */,
 				211386FB2B87689A00F5422B /* Products */,
 				21DAFA422B88A95600A52BED /* Frameworks */,
@@ -220,7 +225,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		211387112B8768F300F5422B /* EmergencyContactsWatch Watch App */ = {
+		211387112B8768F300F5422B /* EmergencyContacts Watch App */ = {
 			isa = PBXGroup;
 			children = (
 				21F2BFDF2B87954C0007BF31 /* Views */,
@@ -229,7 +234,7 @@
 				211387162B8768F400F5422B /* Assets.xcassets */,
 				211387182B8768F400F5422B /* Preview Content */,
 			);
-			path = "EmergencyContactsWatch Watch App";
+			path = "EmergencyContacts Watch App";
 			sourceTree = "<group>";
 		};
 		211387182B8768F400F5422B /* Preview Content */ = {
@@ -290,6 +295,8 @@
 			children = (
 				21F2BFD72B876BFE0007BF31 /* ItemsList.Item.swift */,
 				21F2BFD52B876BD90007BF31 /* ItemsList.swift */,
+				219F1DC62B8E18B200DD5EFD /* Izs.swift */,
+				219F1DC82B8E18C400DD5EFD /* Izs.Item.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,9 +469,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219F1DC92B8E18C400DD5EFD /* Izs.Item.swift in Sources */,
 				21F2BFD42B876BC30007BF31 /* Utilities.swift in Sources */,
 				21F2BFD32B876BBD0007BF31 /* Item.swift in Sources */,
+				219F1DC72B8E18B200DD5EFD /* Izs.swift in Sources */,
 				21F2BFD62B876BD90007BF31 /* ItemsList.swift in Sources */,
+				219F1DCA2B8E18DA00DD5EFD /* IzsItem.swift in Sources */,
 				21F2BFD82B876BFE0007BF31 /* ItemsList.Item.swift in Sources */,
 				211387152B8768F300F5422B /* ContentView.swift in Sources */,
 				21F2BFE22B87973B0007BF31 /* Map.swift in Sources */,
@@ -779,7 +789,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EmergencyContactsWatch Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EmergencyContacts Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -812,7 +822,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"EmergencyContactsWatch Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"EmergencyContacts Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -12,7 +12,7 @@ struct MapView: View {
     var body: some View {
         Map(
             initialPosition: position,
-            interactionModes: [.pan, .zoom],
+            interactionModes: [.pan],
             selection: $selectedMarker
         ) {
             UserAnnotation()
@@ -32,7 +32,6 @@ struct MapView: View {
             }
         }
         .mapStyle(.standard(elevation: .realistic))
-        // .edgesIgnoringSafeArea(.all)
         .mapControls {
             MapUserLocationButton()
         }

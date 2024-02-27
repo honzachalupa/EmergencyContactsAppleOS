@@ -95,10 +95,11 @@
         }
       }
     },
-    "Doporučení: Uložte si tyto kontakty přímo do kontaktů ve vašem iPhone, ať je máte vždy hned poruce" : {
+    "Doporučení: Uložte si tyto kontakty přímo do kontaktů ve vašem iPhone, ať je máte vždy po ruce." : {
 
     },
     "Emergency Contacts" : {
+      "extractionState" : "stale",
       "localizations" : {
         "cs" : {
           "stringUnit" : {

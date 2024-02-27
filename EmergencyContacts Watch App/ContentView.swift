@@ -39,14 +39,7 @@ struct ContentView: View {
                     }.tag(TabKey.list)
                 }
                 .navigationTitle(navigationTitleForSelectedTab(selectedTabKey))
-                .toolbarTitleDisplayMode(.inlineLarge)
-                .toolbar {
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        NavigationLink(destination: SettingsView()) {
-                            Image(systemName: "gear")
-                        }
-                    }
-                }
+                .tabViewStyle(.verticalPage)
             }
         }
     }

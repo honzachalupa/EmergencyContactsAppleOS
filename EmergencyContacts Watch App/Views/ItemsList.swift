@@ -18,7 +18,6 @@ struct ItemsListView: View {
                 }
             }
         }
-        .scrollIndicators(.hidden)
     }
 }
 

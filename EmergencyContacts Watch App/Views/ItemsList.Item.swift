@@ -12,6 +12,11 @@ struct ItemsList_ItemView: View {
             
             Text("\(item.address.street), \(item.address.district)")
             
+            if let note = item.address.note {
+                Text("(\(note))")
+                    .opacity(0.6)
+            }
+            
             Spacer()
             
             NavigateButton(name: item.name, coordinates: item.coordinates)
