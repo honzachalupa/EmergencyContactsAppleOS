@@ -41,7 +41,7 @@ struct Izs_ItemView: View {
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
                     }
-                .foregroundStyle(.white)
+                .foregroundStyle(.foreground)
                 .fontWeight(.bold)
                 .padding()
             }

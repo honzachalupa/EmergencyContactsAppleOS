@@ -1,13 +1,14 @@
 import SwiftUI
+import MapKit
 
 struct ItemsListView: View {
-    var data: [DataItem]
+    let locationManager = CLLocationManager()
     
     @State var filteredDataGrouped: [DataItem.CategoryType: [DataItem]] = [:]
     
     var body: some View {
         VStack {
-            ItemsList_Filter(data: data, filteredDataGrouped: $filteredDataGrouped)
+            ItemsList_Filter(filteredDataGrouped: $filteredDataGrouped)
                 .frame(height: 170)
             
             List {
@@ -28,11 +29,49 @@ struct ItemsListView: View {
             }
             .listStyle(.sidebar)
         }
+        /* .onAppear(perform: {
+            let place = filteredDataGrouped["hospital"]!.first!
+            let placeCoordinates = place.coordinates
+            
+            print(
+                locationManager.location!.coordinate,
+                filteredDataGrouped["hospital"]!.first!.coordinates,
+                locationManager.location!.distance(
+                    from: CLLocation(
+                        latitude: placeCoordinates.latitude,
+                        longitude: placeCoordinates.latitude
+                    )
+                ) / 1000,
+                CLLocation(
+                    latitude: placeCoordinates.latitude,
+                    longitude: placeCoordinates.latitude
+                ).distance(from: locationManager.location!) / 1000
+            )
+        })
+        .onChange(of: store.data) {
+            let place = filteredDataGrouped["hospital"]!.first!
+            let placeCoordinates = place.coordinates
+            
+            print(
+                locationManager.location!.coordinate,
+                filteredDataGrouped["hospital"]!.first!.coordinates,
+                locationManager.location!.distance(
+                    from: CLLocation(
+                        latitude: placeCoordinates.latitude,
+                        longitude: placeCoordinates.latitude
+                    )
+                ) / 1000,
+                CLLocation(
+                    latitude: placeCoordinates.latitude,
+                    longitude: placeCoordinates.latitude
+                ).distance(from: locationManager.location!) / 1000
+            )
+        } */
     }
 }
 
 struct ItemsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemsListView(data: mockedItems)
+        ItemsListView()
     }
 }

@@ -1,8 +1,39 @@
 import Foundation
+import SwiftData
+
+class DataStore: ObservableObject {
+    @Published var data: [DataItem]!
+    @Published var dataGrouped: [DataItem.CategoryType: [DataItem]];
+    @Published var errorMessage: String!
+    
+    init() {
+        self.data = []
+        self.dataGrouped = [:];
+        self.errorMessage = ""
+        
+        DataManager().fetch() { result in
+            switch result {
+                case .success(let fetchedData):
+                    self.data = fetchedData
+                    self.dataGrouped = groupByCategory(fetchedData)
+                case .failure(let error):
+                    self.errorMessage = "Failed to fetch data: \(error.localizedDescription)"
+            }
+        }
+    }
+}
+
 
 class DataManager {
     var data: [DataItem]?
     var errorMessage: String?
+    
+    // @Environment(\.modelContext) var context
+    
+    /* init(data: [DataItem]? = nil, errorMessage: String? = nil) {
+        self.data = data
+        self.errorMessage = errorMessage
+    } */
     
     func fetch(completion: @escaping (Result<[DataItem], Error>) -> Void) {
         guard let url = URL(string: "https://www.nouzovekontakty.cz/api/json") else {
@@ -41,6 +72,11 @@ class DataManager {
                     
                     DispatchQueue.main.async {
                         self.data = jsonData
+                        
+                        /* jsonData.forEach { item in
+                            context.insert(item)
+                        } */
+                        
                         completion(.success(jsonData))
                     }
                 } catch {

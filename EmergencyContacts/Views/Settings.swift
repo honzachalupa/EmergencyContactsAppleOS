@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        List() {
+        List {
             Section {
                 Button(action: openSystemSettings, label: {
                     Text("Change location service settings")

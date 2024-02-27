@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum TabLabels: String {
+enum TabKey: String {
     case services
     case map
     case list
@@ -9,9 +9,9 @@ enum TabLabels: String {
 struct ContentView: View {
     @State private var isSheetOpened: Bool = true
     @State private var initialSheetDetent = PresentationDetent.medium
-    @State private var selectedTabKey: TabLabels = .map
+    @State private var selectedTabKey: TabKey = .map
     
-    func navigationTitleForSelectedTab(_ key: TabLabels) -> String {
+    func navigationTitleForSelectedTab(_ key: TabKey) -> String {
         switch key {
             case .services:
                 return String(localized: "Phone Numbers")
@@ -24,19 +24,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            DataProviderView() { receivedData in
+            DataErrorHandlerView() {
                 TabView(selection: $selectedTabKey) {
                     IzsView().tabItem {
                         Label(navigationTitleForSelectedTab(.services), systemImage: "phone.fill")
-                    }.tag(TabLabels.services)
+                    }.tag(TabKey.services)
                     
-                    MapView(data: receivedData).tabItem {
+                    MapView().tabItem {
                         Label(navigationTitleForSelectedTab(.map), systemImage: "map")
-                    }.tag(TabLabels.map)
+                    }.tag(TabKey.map)
                     
-                    ItemsListView(data: receivedData).tabItem {
+                    ItemsListView().tabItem {
                         Label(navigationTitleForSelectedTab(.list),systemImage: "list.bullet")
-                    }.tag(TabLabels.list)
+                    }.tag(TabKey.list)
                 }
                 .navigationTitle(navigationTitleForSelectedTab(selectedTabKey))
                 .toolbarTitleDisplayMode(.inlineLarge)

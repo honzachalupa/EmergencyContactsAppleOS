@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct ItemsList_Filter: View {
-    var data: [DataItem]
     @Binding var filteredDataGrouped: [DataItem.CategoryType: [DataItem]]
+    
+    @StateObject var store = DataStore()
     
     @State var allCategories: [DataItem.CategoryType] = []
     @State var allDistricts: [DataItem.AddressType.DiscrictType] = []
@@ -46,14 +47,14 @@ struct ItemsList_Filter: View {
             }
         }
         .scrollDisabled(true)
-        .onAppear() {
-            filteredDataGrouped = groupByCategory(data)
+        .onChange(of: store.data) {
+            filteredDataGrouped = store.dataGrouped
             
-            allCategories = data.map { $0.category }.unique()
-            allDistricts = data.map { $0.address.district }.unique().sorted(using: .localizedStandard)
+            allCategories = store.data.map { $0.category }.unique()
+            allDistricts = store.data.map { $0.address.district }.unique().sorted(using: .localizedStandard)
         }
         .onChange(of: filterChanged) {
-            let filtered = data.filter {
+            let filtered = store.data.filter {
                 ($0.category == selectedCategory || selectedCategory == "all") &&
                 ($0.address.district == selectedDistrict || selectedDistrict == "all")
             }

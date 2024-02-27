@@ -1,11 +1,5 @@
-//
-//  EmergencyContactsApp.swift
-//  EmergencyContacts
-//
-//  Created by Jan Chalupa on 22.02.2024.
-//
-
 import SwiftUI
+import SwiftData
 
 @main
 struct EmergencyContactsApp: App {
@@ -13,5 +7,6 @@ struct EmergencyContactsApp: App {
         WindowGroup {
             ContentView()
         }
+        // .modelContainer(for: [DataItem_.self])
     }
 }

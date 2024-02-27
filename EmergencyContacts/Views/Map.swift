@@ -2,15 +2,9 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
-    var data: [DataItem]
-    let dataGrouped: [DataItem.CategoryType: [DataItem]]
-    
-    init(data: [DataItem]) {
-        self.data = data
-        self.dataGrouped = groupByCategory(data)
-    }
-    
     let locationManager = CLLocationManager()
+    
+    @StateObject var store = DataStore()
     
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
     @State private var selectedMarker: DataItem?
@@ -23,8 +17,8 @@ struct MapView: View {
         ) {
             UserAnnotation()
             
-            ForEach(dataGrouped.keys.sorted(), id: \.self) { category in
-                if let items = dataGrouped[category] {
+            ForEach(store.dataGrouped.keys.sorted(), id: \.self) { category in
+                if let items = store.dataGrouped[category] {
                     ForEach(items, id: \.id) { item in
                         Marker(
                             item.name,
@@ -58,7 +52,7 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView(data: mockedItems)
+    MapView()
 }
 
 // https://developer.apple.com/forums/thread/744107#744107021

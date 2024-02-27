@@ -31,7 +31,7 @@
 		2145E7142B8769AE00494930 /* ItemsList.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70A2B8769AD00494930 /* ItemsList.Item.swift */; };
 		2145E7152B8769AE00494930 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataManager.swift */; };
 		2145E7162B8769AE00494930 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70C2B8769AE00494930 /* Item.swift */; };
-		2145E7172B8769AE00494930 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataProvider.swift */; };
+		2145E7172B8769AE00494930 /* DataErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataErrorHandler.swift */; };
 		2145E7182B8769AE00494930 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
 		2145E7192B8769AE00494930 /* ItemsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70F2B8769AE00494930 /* ItemsList.swift */; };
 		21869C802B8C92800009810E /* Izs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21869C7F2B8C92800009810E /* Izs.swift */; };
@@ -44,7 +44,7 @@
 		21F2BFD82B876BFE0007BF31 /* ItemsList.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F2BFD72B876BFE0007BF31 /* ItemsList.Item.swift */; };
 		21F2BFD92B876C650007BF31 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
 		21F2BFE22B87973B0007BF31 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7092B8769AD00494930 /* Map.swift */; };
-		21F2BFE32B87973D0007BF31 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataProvider.swift */; };
+		21F2BFE32B87973D0007BF31 /* DataErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataErrorHandler.swift */; };
 		21F2BFE42B8797780007BF31 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +120,7 @@
 		2145E70A2B8769AD00494930 /* ItemsList.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsList.Item.swift; sourceTree = "<group>"; };
 		2145E70B2B8769AD00494930 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		2145E70C2B8769AE00494930 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		2145E70D2B8769AE00494930 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		2145E70D2B8769AE00494930 /* DataErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataErrorHandler.swift; sourceTree = "<group>"; };
 		2145E70E2B8769AE00494930 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		2145E70F2B8769AE00494930 /* ItemsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsList.swift; sourceTree = "<group>"; };
 		21869C7F2B8C92800009810E /* Izs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Izs.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 				2145E70A2B8769AD00494930 /* ItemsList.Item.swift */,
 				21EB96882B8CCD8F0075A2F5 /* ItemsList.Filter.swift */,
 				2145E7092B8769AD00494930 /* Map.swift */,
-				2145E70D2B8769AE00494930 /* DataProvider.swift */,
+				2145E70D2B8769AE00494930 /* DataErrorHandler.swift */,
 				212B83C62B8B9B53005B232C /* LookAround.swift */,
 				212B83C82B8BACAF005B232C /* Settings.swift */,
 				21869C7F2B8C92800009810E /* Izs.swift */,
@@ -446,7 +446,7 @@
 				21EB968C2B8CD7FF0075A2F5 /* Izs.Item.swift in Sources */,
 				21869C802B8C92800009810E /* Izs.swift in Sources */,
 				212B83C72B8B9B53005B232C /* LookAround.swift in Sources */,
-				2145E7172B8769AE00494930 /* DataProvider.swift in Sources */,
+				2145E7172B8769AE00494930 /* DataErrorHandler.swift in Sources */,
 				2145E7102B8769AE00494930 /* Utilities.swift in Sources */,
 				2145E7132B8769AE00494930 /* Map.swift in Sources */,
 				211387002B87689A00F5422B /* ContentView.swift in Sources */,
@@ -468,7 +468,7 @@
 				21F2BFD82B876BFE0007BF31 /* ItemsList.Item.swift in Sources */,
 				211387152B8768F300F5422B /* ContentView.swift in Sources */,
 				21F2BFE22B87973B0007BF31 /* Map.swift in Sources */,
-				21F2BFE32B87973D0007BF31 /* DataProvider.swift in Sources */,
+				21F2BFE32B87973D0007BF31 /* DataErrorHandler.swift in Sources */,
 				21F2BFE42B8797780007BF31 /* DataManager.swift in Sources */,
 				211387132B8768F300F5422B /* EmergencyContactsWatchApp.swift in Sources */,
 			);

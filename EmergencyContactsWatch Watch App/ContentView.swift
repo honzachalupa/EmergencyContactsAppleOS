@@ -3,8 +3,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            DataProviderView() { receivedData in
-                ItemsListView(data: receivedData)
+            DataErrorHandlerView() {
+                ItemsListView()
                     .navigationTitle("Emergency Contacts")
             }
         }
