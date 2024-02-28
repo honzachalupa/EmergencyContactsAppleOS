@@ -22,6 +22,12 @@ struct ItemsList_FilterView: View {
         return hasher.finalize()
     }
     
+    func reset() {
+        selectedCategory = "all"
+        selectedDistrict = "all"
+        selectedKeyword = "all"
+    }
+    
     var body: some View {
         GeometryReader { screen in
             Menu(content: {
@@ -62,10 +68,7 @@ struct ItemsList_FilterView: View {
                     Text("District")
                 })
                 
-                Button(role: .destructive, action: {
-                    selectedCategory = "all"
-                    selectedDistrict = "all"
-                }) {
+                Button(role: .destructive, action: reset) {
                     Label("Reset", systemImage: "arrow.clockwise")
                 }
             }, label: {
