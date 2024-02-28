@@ -7,27 +7,30 @@ struct ItemsListView: View {
     @State var filteredDataGrouped: [DataItem.CategoryType: [DataItem]] = [:]
     
     var body: some View {
-        VStack {
-            ItemsList_Filter(filteredDataGrouped: $filteredDataGrouped)
-                .frame(height: 170)
-            
-            List {
-                ForEach(filteredDataGrouped.keys.sorted(), id: \.self) { category in
-                    Section {
-                        ForEach(filteredDataGrouped[category] ?? [], id: \.name) { item in
-                            ItemsList_ItemView(item: item)
-                        }
-                    } header: {
-                        HStack {
-                            Image(systemName: "cross.fill")
-                                .foregroundColor(getCategoryColor(category))
-                            
-                            Text(getCategoryLabel(category))
+        ZStack {
+            if !filteredDataGrouped.isEmpty {
+                Text("No items were found based on the specified criteria. Please adjust the filter.")
+                    .multilineTextAlignment(.center)
+            } else {
+                List {
+                    ForEach(filteredDataGrouped.keys.sorted(), id: \.self) { category in
+                        Section {
+                            ForEach(filteredDataGrouped[category] ?? [], id: \.name) { item in
+                                ItemsList_ItemView(item: item)
+                            }
+                        } header: {
+                            HStack {
+                                Image(systemName: "cross.fill")
+                                    .foregroundColor(getCategoryColor(category))
+                                
+                                Text(getCategoryLabel(category))
+                            }
                         }
                     }
                 }
             }
-            .listStyle(.sidebar)
+            
+            ItemsList_FilterView(filteredDataGrouped: $filteredDataGrouped)
         }
         /* .onAppear(perform: {
             let place = filteredDataGrouped["hospital"]!.first!

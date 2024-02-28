@@ -14,6 +14,21 @@ var fallbackPosition = MapCameraPosition.region(
     )
 )
 
+func getKeywordLabel(_ keyword: DataItem.KeywordType) -> String {
+    switch keyword.lowercased() {
+        case "adult-care":
+            return String(localized: "Adult Care")
+        case "child-care":
+            return String(localized: "Child Care")
+        case "stomatology":
+            return String(localized: "Stomatology")
+        case "ophthalmology":
+            return String(localized: "Ophthalmology")
+        default:
+            return keyword
+    }
+}
+
 func getCategoryLabel(_ category: DataItem.CategoryType) -> String {
     switch category.lowercased() {
         case "hospital":

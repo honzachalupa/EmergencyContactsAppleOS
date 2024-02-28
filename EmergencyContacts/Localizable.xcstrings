@@ -31,6 +31,16 @@
         }
       }
     },
+    "Adult Care" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro dospělé"
+          }
+        }
+      }
+    },
     "All" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -73,6 +83,16 @@
         }
       }
     },
+    "Child Care" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro děti"
+          }
+        }
+      }
+    },
     "District" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -91,6 +111,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Městské části"
+          }
+        }
+      }
+    },
+    "E-mail" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E-mail"
           }
         }
       }
@@ -122,7 +152,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Filtr"
+            "value" : "Filtry"
           }
         }
       }
@@ -232,12 +262,33 @@
         }
       }
     },
+    "No items were found based on the specified criteria. Please adjust the filter." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dle zadaných kriterií nebyly nalezeny žádné položky. Upravte filtr."
+          }
+        }
+      }
+    },
     "No preview available" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Náhled není k dispozici"
+          }
+        }
+      }
+    },
+    "Ophthalmology" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oční"
           }
         }
       }
@@ -296,6 +347,19 @@
           }
         }
       }
+    },
+    "Stomatology" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zubní"
+          }
+        }
+      }
+    },
+    "Sub-category" : {
+
     },
     "Vet" : {
       "extractionState" : "manual",

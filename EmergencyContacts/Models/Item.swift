@@ -2,11 +2,11 @@ import MapKit
 
 struct Address: Decodable {
     typealias StreetType = String
-    typealias DiscrictType = String
+    typealias DistrictType = String
     typealias NoteType = String?
     
     let street: StreetType
-    let district: DiscrictType
+    let district: DistrictType
     let note: NoteType
 }
 
@@ -17,7 +17,7 @@ struct Contact: Decodable {
     typealias UrlType = String?
     
     let phoneNumbers: PhoneNumbersType
-    let emailAddess: EmailAddressType
+    let emailAddress: EmailAddressType
     let url: UrlType
 }
 
@@ -28,6 +28,8 @@ struct DataItem: Decodable, Identifiable {
     typealias AddressType = Address
     typealias ContactType = Contact
     typealias CoordinatesType = CLLocationCoordinate2D
+    typealias KeywordType = String
+    typealias KeywordsType = [KeywordType]?
 
     let id: IdType
     let category: CategoryType
@@ -35,6 +37,7 @@ struct DataItem: Decodable, Identifiable {
     let address: AddressType
     let contact: ContactType
     let coordinates: CoordinatesType
+    let keywords: KeywordsType
 }
 
 private enum CodingKeys: String, CodingKey {
@@ -44,6 +47,7 @@ private enum CodingKeys: String, CodingKey {
     case address
     case contact
     case coordinates
+    case keywords
 }
 
 extension CLLocationCoordinate2D: Decodable {
@@ -64,6 +68,7 @@ extension DataItem {
         address = try container.decode(AddressType.self, forKey: .address)
         contact = try container.decode(ContactType.self, forKey: .contact)
         coordinates = try container.decode(CoordinatesType.self, forKey: .coordinates)
+        keywords = try container.decode(KeywordsType.self, forKey: .keywords)
     }
 }
 
@@ -76,10 +81,11 @@ extension DataItem: Hashable {
         hasher.combine(address.district)
         hasher.combine(address.note)
         hasher.combine(contact.phoneNumbers)
-        hasher.combine(contact.emailAddess)
+        hasher.combine(contact.emailAddress)
         hasher.combine(contact.url)
         hasher.combine(coordinates.latitude)
         hasher.combine(coordinates.longitude)
+        hasher.combine(keywords)
     }
 }
 
@@ -93,10 +99,11 @@ extension DataItem: Equatable {
             lhs.address.district == rhs.address.district &&
             lhs.address.note == rhs.address.note &&
             lhs.contact.phoneNumbers == rhs.contact.phoneNumbers &&
-            lhs.contact.emailAddess == rhs.contact.emailAddess &&
+            lhs.contact.emailAddress == rhs.contact.emailAddress &&
             lhs.contact.url == rhs.contact.url &&
             lhs.coordinates.latitude == rhs.coordinates.latitude &&
-            lhs.coordinates.longitude == rhs.coordinates.longitude
+            lhs.coordinates.longitude == rhs.coordinates.longitude &&
+            lhs.keywords == rhs.keywords
     }
 }
 
@@ -104,7 +111,7 @@ let mockedItems: [DataItem] = [
     DataItem(
         id: 101,
         category: "hospital",
-        name: "Name 1",
+        name: "Name 1 long name long name long name long name",
         address: Address(
             street: "Address steet",
             district: "Address district 1",
@@ -112,10 +119,11 @@ let mockedItems: [DataItem] = [
         ),
         contact: Contact(
             phoneNumbers: [123456789],
-            emailAddess: "email@email.com",
+            emailAddress: "email@email.com",
             url: "https:/www.url.com/"
         ),
-        coordinates: CLLocationCoordinate2D(latitude: 50.08804, longitude: 14.42076)
+        coordinates: CLLocationCoordinate2D(latitude: 50.08804, longitude: 14.42076),
+        keywords: ["adult-care", "child-care"]
     ),
     DataItem(
         id: 102,
@@ -128,10 +136,11 @@ let mockedItems: [DataItem] = [
         ),
         contact: Contact(
             phoneNumbers: [123456789],
-            emailAddess: "email@email.com",
+            emailAddress: "email@email.com",
             url: "https:/www.url.com/"
         ),
-        coordinates: CLLocationCoordinate2D(latitude: 50.08804, longitude: 14.42076 + 1)
+        coordinates: CLLocationCoordinate2D(latitude: 50.08804, longitude: 14.42076 + 1),
+        keywords: nil
     ),
     DataItem(
         id: 201,
@@ -144,10 +153,11 @@ let mockedItems: [DataItem] = [
         ),
         contact: Contact(
             phoneNumbers: [123456789],
-            emailAddess: "email@email.com",
+            emailAddress: "email@email.com",
             url: "https:/www.url.com/"
         ),
-        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 1, longitude: 14.42076)
+        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 1, longitude: 14.42076),
+        keywords: ["stomatology"]
     ),
     DataItem(
         id: 202,
@@ -160,10 +170,11 @@ let mockedItems: [DataItem] = [
         ),
         contact: Contact(
             phoneNumbers: [123456789],
-            emailAddess: "email@email.com",
+            emailAddress: "email@email.com",
             url: "https:/www.url.com/"
         ),
-        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 1, longitude: 14.42076 + 1)
+        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 1, longitude: 14.42076 + 1),
+        keywords: nil
     ),
     DataItem(
         id: 301,
@@ -176,10 +187,11 @@ let mockedItems: [DataItem] = [
         ),
         contact: Contact(
             phoneNumbers: [123456789],
-            emailAddess: "email@email.com",
+            emailAddress: "email@email.com",
             url: "https:/www.url.com/"
         ),
-        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 2, longitude: 14.42076)
+        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 2, longitude: 14.42076),
+        keywords: nil
     ),
     DataItem(
         id: 302,
@@ -192,9 +204,10 @@ let mockedItems: [DataItem] = [
         ),
         contact: Contact(
             phoneNumbers: [123456789],
-            emailAddess: "email@email.com",
+            emailAddress: "email@email.com",
             url: "https:/www.url.com/"
         ),
-        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 2, longitude: 14.42076 + 1)
+        coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 2, longitude: 14.42076 + 1),
+        keywords: nil
     )
 ]

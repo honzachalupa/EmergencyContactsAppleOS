@@ -1,4 +1,5 @@
 import SwiftUI
+// import Contacts
 
 enum TabKey: String {
     case services
@@ -43,12 +44,24 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
                         NavigationLink(destination: SettingsView()) {
-                            Image(systemName: "gear")
+                            Image(systemName: "gearshape")
                         }
                     }
                 }
             }
         }
+        /* .onAppear() {
+            var status: Bool = false
+            var store = CNContactStore()
+
+            store.requestAccess(for: CNEntityType.contacts) { hasPermission, error in
+                if error != nil {
+                    print(error!)
+                }
+                
+                status = hasPermission
+            }
+        } */
     }
 }
 

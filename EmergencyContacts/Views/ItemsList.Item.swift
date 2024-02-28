@@ -9,6 +9,17 @@ struct ItemsList_ItemView: View {
             Text(item.name)
                 .font(.headline)
             
+            if let keywords = item.keywords {
+                if !keywords.isEmpty {
+                    HStack {
+                        ForEach(keywords, id: \.self) { keyword in
+                            PillView(value: getKeywordLabel(keyword))
+                        }
+                    }
+                    .padding(.bottom, 5)
+                }
+            }
+            
             Text("\(item.address.street), \(item.address.district)")
             
             if let note = item.address.note {
@@ -25,10 +36,25 @@ struct ItemsList_ItemView: View {
             
                 NavigateButton(name: item.name, coordinates: item.coordinates)
                     .buttonStyle(.bordered)
-                WebButton(url: item.contact.url)
-                    .buttonStyle(.bordered)
+                
                 CallButton(phoneNumbers: item.contact.phoneNumbers)
                     .buttonStyle(.bordered)
+                
+                Menu(content: {
+                    WebButton(url: item.contact.url)
+                        .buttonStyle(.bordered)
+                    
+                    MailButton(emailAddress: item.contact.emailAddress)
+                        .buttonStyle(.bordered)
+                }, label: {
+                    Button {} label: {
+                        Image(systemName: "ellipsis")
+                            .resizable()
+                            .frame(width: 14, height: 3)
+                            .padding(.vertical, 8)
+                    }
+                    .buttonStyle(.bordered)
+                })
             }
         }
         .padding(.vertical, 10)
@@ -42,9 +68,7 @@ struct NavigateButton: View {
     var body: some View {
         Button("Navigate") {
             let destination = MKMapItem(
-                placemark: MKPlacemark(
-                    coordinate: coordinates
-                )
+                placemark: MKPlacemark(coordinate: coordinates)
             )
             
             destination.name = name
@@ -70,20 +94,32 @@ struct WebButton: View {
     }
 }
 
+struct MailButton: View {
+    let emailAddress: String?
+
+    var body: some View {
+        if let emailAddress = emailAddress, let emailAddressUrl = URL(string: "mailto://\(emailAddress)") {
+                Button("E-mail") {
+                    UIApplication.shared.open(emailAddressUrl)
+                }
+            }
+    }
+}
+
 struct CallButton: View {
     let phoneNumbers: DataItem.ContactType.PhoneNumbersType
 
     var body: some View {
-        if phoneNumbers.count == 1, let phoneURL = URL(string: "tel://\(formatPhoneNumber(phoneNumbers[0]))") {
+        if phoneNumbers.count == 1, let phoneUrl = URL(string: "tel://\(formatPhoneNumber(phoneNumbers[0]))") {
             Button("Call") {
-                UIApplication.shared.open(phoneURL)
+                UIApplication.shared.open(phoneUrl)
             }
         } else if phoneNumbers.count > 1 {
             Menu {
                 ForEach(phoneNumbers, id: \.self) { phoneNumber in
-                    if let phoneURL = URL(string: "tel://\(formatPhoneNumber(phoneNumber))") {
+                    if let phoneUrl = URL(string: "tel://\(formatPhoneNumber(phoneNumber))") {
                         Button(formatPhoneNumber(phoneNumber)) {
-                            UIApplication.shared.open(phoneURL)
+                            UIApplication.shared.open(phoneUrl)
                         }
                     }
                 }

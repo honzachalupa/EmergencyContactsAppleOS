@@ -82,6 +82,7 @@ class DataManager {
                 } catch {
                     DispatchQueue.main.async {
                         self.errorMessage = "Error parsing JSON data: \(error)"
+                        
                         completion(.failure(error))
                     }
                 }
