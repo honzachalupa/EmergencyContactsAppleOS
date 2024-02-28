@@ -8,7 +8,7 @@ struct ItemsListView: View {
     
     var body: some View {
         ZStack {
-            if !filteredDataGrouped.isEmpty {
+            if filteredDataGrouped.isEmpty {
                 Text("No items were found based on the specified criteria. Please adjust the filter.")
                     .multilineTextAlignment(.center)
             } else {
