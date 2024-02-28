@@ -26,6 +26,8 @@
 		212B83C92B8BACAF005B232C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B83C82B8BACAF005B232C /* Settings.swift */; };
 		213BCA632B8F6EBF00C2B420 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCA622B8F6EBF00C2B420 /* Pill.swift */; };
 		213BCA642B8F6EBF00C2B420 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213BCA622B8F6EBF00C2B420 /* Pill.swift */; };
+		213BCA6C2B8FCB8200C2B420 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCA6B2B8FCB8200C2B420 /* InfoPlist.xcstrings */; };
+		213BCA6D2B8FCB8200C2B420 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 213BCA6B2B8FCB8200C2B420 /* InfoPlist.xcstrings */; };
 		2145E7102B8769AE00494930 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7062B8769AD00494930 /* Utilities.swift */; };
 		2145E7112B8769AE00494930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2145E7072B8769AD00494930 /* Assets.xcassets */; };
 		2145E7122B8769AE00494930 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 2145E7082B8769AD00494930 /* Preview Content */; };
@@ -119,6 +121,7 @@
 		212B83C62B8B9B53005B232C /* LookAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAround.swift; sourceTree = "<group>"; };
 		212B83C82B8BACAF005B232C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		213BCA622B8F6EBF00C2B420 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		213BCA6B2B8FCB8200C2B420 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		2145E7062B8769AD00494930 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2145E7072B8769AD00494930 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2145E7082B8769AD00494930 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 				211387012B87689B00F5422B /* Assets.xcassets */,
 				211387032B87689B00F5422B /* EmergencyContacts.entitlements */,
 				211387042B87689B00F5422B /* Preview Content */,
+				213BCA6B2B8FCB8200C2B420 /* InfoPlist.xcstrings */,
 			);
 			path = EmergencyContacts;
 			sourceTree = "<group>";
@@ -395,6 +399,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 211386F12B87689A00F5422B;
 			productRefGroup = 211386FB2B87689A00F5422B /* Products */;
@@ -422,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2145E7122B8769AE00494930 /* Preview Content in Resources */,
+				213BCA6C2B8FCB8200C2B420 /* InfoPlist.xcstrings in Resources */,
 				2145E7182B8769AE00494930 /* Localizable.xcstrings in Resources */,
 				211387062B87689B00F5422B /* Preview Assets.xcassets in Resources */,
 				2145E7112B8769AE00494930 /* Assets.xcassets in Resources */,
@@ -434,6 +440,7 @@
 			files = (
 				2113871A2B8768F400F5422B /* Preview Assets.xcassets in Resources */,
 				211387172B8768F400F5422B /* Assets.xcassets in Resources */,
+				213BCA6D2B8FCB8200C2B420 /* InfoPlist.xcstrings in Resources */,
 				21F2BFD92B876C650007BF31 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,7 +529,7 @@
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmergencyContactsWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = EmergencyContactsWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = "Emergency Contacts";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -553,7 +560,7 @@
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmergencyContactsWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = EmergencyContactsWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = "Emergency Contacts";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -704,12 +711,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmergencyContacts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Nouzové kontakty";
+				INFOPLIST_KEY_CFBundleDisplayName = "Emergency Contacts";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
-				INFOPLIST_KEY_NSLocationUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Your location will be used to locate the nearest emergency room.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location will be used to locate the nearest emergency room.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -757,12 +762,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmergencyContacts/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Nouzové kontakty";
+				INFOPLIST_KEY_CFBundleDisplayName = "Emergency Contacts";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
-				INFOPLIST_KEY_NSLocationUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Vaše poloha bude použita k nazelezení nejblížší pohotovosti.";
+				INFOPLIST_KEY_NSLocationUsageDescription = "Your location will be used to locate the nearest emergency room.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location will be used to locate the nearest emergency room.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -806,7 +809,7 @@
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = EmergencyContactsWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Emergency Contacts";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = janchalupa.EmergencyContacts;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
@@ -840,7 +843,7 @@
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = EmergencyContactsWatch;
+				INFOPLIST_KEY_CFBundleDisplayName = "Emergency Contacts";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = janchalupa.EmergencyContacts;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
