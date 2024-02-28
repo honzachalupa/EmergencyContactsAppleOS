@@ -7,10 +7,10 @@ struct DataErrorHandlerView<Content: View>: View {
     
     var body: some View {
         ZStack {
-            if store.data.count > 0 {
+            if store.data.count > 0 && store.errorMessage == nil {
                 self.content()
             } else if let errorMessage = store.errorMessage {
-                Text("Error: \(errorMessage)")
+                Text(errorMessage)
             } else {
                 ProgressView(label: {
                     Text("Loading...")

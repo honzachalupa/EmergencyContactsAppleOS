@@ -213,6 +213,7 @@
 			children = (
 				21EB968A2B8CD7BA0075A2F5 /* Utilities */,
 				211104932B8A8E56008B3815 /* Info.plist */,
+				213BCA6B2B8FCB8200C2B420 /* InfoPlist.xcstrings */,
 				21F2BFDE2B8794EB0007BF31 /* Models */,
 				21F2BFDA2B8794C40007BF31 /* Views */,
 				2145E7072B8769AD00494930 /* Assets.xcassets */,
@@ -223,7 +224,6 @@
 				211387012B87689B00F5422B /* Assets.xcassets */,
 				211387032B87689B00F5422B /* EmergencyContacts.entitlements */,
 				211387042B87689B00F5422B /* Preview Content */,
-				213BCA6B2B8FCB8200C2B420 /* InfoPlist.xcstrings */,
 			);
 			path = EmergencyContacts;
 			sourceTree = "<group>";

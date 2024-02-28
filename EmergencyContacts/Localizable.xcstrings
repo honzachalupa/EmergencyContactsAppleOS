@@ -120,12 +120,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nouzové kontakty"
+            "value" : "SOS kontakty"
           }
         }
       }
     },
     "Error: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "cs" : {
           "stringUnit" : {

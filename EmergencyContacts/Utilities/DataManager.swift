@@ -9,7 +9,7 @@ class DataStore: ObservableObject {
     init() {
         self.data = []
         self.dataGrouped = [:];
-        self.errorMessage = ""
+        self.errorMessage = nil
         
         DataManager().fetch() { result in
             switch result {
@@ -36,7 +36,9 @@ class DataManager {
     } */
     
     func fetch(completion: @escaping (Result<[DataItem], Error>) -> Void) {
-        guard let url = URL(string: "https://www.nouzovekontakty.cz/api/json") else {
+        let apiKey = ProcessInfo.processInfo.environment["API_KEY"]!
+        
+        guard let url = URL(string: "https://www.nouzovekontakty.cz/api/json?apiKey=\(apiKey)") else {
             self.errorMessage = "Invalid URL"
             completion(.failure(NSError(domain: "DataManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
