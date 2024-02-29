@@ -342,6 +342,7 @@
 				211386F82B87689A00F5422B /* Resources */,
 				2113871E2B8768F400F5422B /* Embed Watch Content */,
 				2102496D2B8B75A5000A37EE /* Embed Foundation Extensions */,
+				21A65D3C2B90E832002361FE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -446,6 +447,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21A65D3C2B90E832002361FE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp ./.scripts/pre-commit ./.git/hooks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		210249572B8B75A4000A37EE /* Sources */ = {

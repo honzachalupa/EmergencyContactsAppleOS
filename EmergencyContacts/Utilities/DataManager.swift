@@ -36,12 +36,13 @@ class DataManager {
     } */
     
     func fetch(completion: @escaping (Result<[DataItem], Error>) -> Void) {
+        x
         /* guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
             print("Error: API_KEY not found")
             return
         } */
         
-        guard let url = URL(string: "https://www.nouzovekontakty.cz/api/json?apiKey=\(apiKey)") else {
+        guard let url = URL(string: "https://www.nouzovekontakty.cz/api/json") else {
             self.errorMessage = "Invalid URL"
             completion(.failure(NSError(domain: "DataManager", code: 0, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])))
             return
