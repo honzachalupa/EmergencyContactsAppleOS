@@ -27,8 +27,6 @@ struct ItemsList_ItemView: View {
                     .opacity(0.6)
             }
             
-            // LookAroundView(item: item)
-            
             Spacer()
             
             HStack() {
@@ -40,21 +38,23 @@ struct ItemsList_ItemView: View {
                 CallButton(phoneNumbers: item.contact.phoneNumbers)
                     .buttonStyle(.bordered)
                 
-                Menu(content: {
-                    WebButton(url: item.contact.url)
+                if (item.contact.url != nil) || (item.contact.emailAddress != nil) {
+                    Menu(content: {
+                        WebButton(url: item.contact.url)
+                            .buttonStyle(.bordered)
+                        
+                        MailButton(emailAddress: item.contact.emailAddress)
+                            .buttonStyle(.bordered)
+                    }, label: {
+                        Button {} label: {
+                            Image(systemName: "ellipsis")
+                                .resizable()
+                                .frame(width: 14, height: 3)
+                                .padding(.vertical, 8)
+                        }
                         .buttonStyle(.bordered)
-                    
-                    MailButton(emailAddress: item.contact.emailAddress)
-                        .buttonStyle(.bordered)
-                }, label: {
-                    Button {} label: {
-                        Image(systemName: "ellipsis")
-                            .resizable()
-                            .frame(width: 14, height: 3)
-                            .padding(.vertical, 8)
-                    }
-                    .buttonStyle(.bordered)
-                })
+                    })
+                }
             }
         }
         .padding(.vertical, 10)

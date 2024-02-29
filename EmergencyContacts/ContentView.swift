@@ -40,7 +40,7 @@ struct ContentView: View {
                     }.tag(TabKey.list)
                 }
                 .navigationTitle(navigationTitleForSelectedTab(selectedTabKey))
-                .toolbarTitleDisplayMode(.inlineLarge)
+                .toolbarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
                         NavigationLink(destination: SettingsView()) {

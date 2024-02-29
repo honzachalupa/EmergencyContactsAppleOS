@@ -37,14 +37,14 @@ struct MapView: View {
         .mapControls {
             MapUserLocationButton()
         }
-        .sheet(item: $selectedMarker) { item in
-            if let marker = selectedMarker {
-                ZStack {
+        .sheet(item: $selectedMarker) { marker in
+                VStack {
                     ItemsList_ItemView(item: marker)
+                    
+                    // LookAroundPreview(coordinates: marker.coordinates)
                 }
                 .padding()
                 .presentationDetents([.height(200)])
-            }
         }
         .onAppear {
             locationManager.requestWhenInUseAuthorization()

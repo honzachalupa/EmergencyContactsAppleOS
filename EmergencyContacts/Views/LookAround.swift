@@ -1,44 +1,38 @@
 import SwiftUI
 import MapKit
 
-struct LookAroundView: View {
-    var item: DataItem
+struct LookAroundPreview: UIViewControllerRepresentable {
+    typealias UIViewControllerType = MKLookAroundViewController
     
-    @State private var lookAroundScene: MKLookAroundScene?
+    @State var coordinates: CLLocationCoordinate2D?
     
-    func getLookAroundScene() {
-        lookAroundScene = nil
-        
+    func makeUIViewController(context: Context) -> MKLookAroundViewController {
+        return MKLookAroundViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: MKLookAroundViewController, context: Context) {
         Task {
-            let request = MKLookAroundSceneRequest(
-                mapItem: MKMapItem(
-                    placemark: MKPlacemark(
-                        coordinate: CLLocationCoordinate2D(
-                            latitude: 50.06936,
-                            longitude: 14.39186
-                        )
-                    )
-                )
-            )
-            
-            lookAroundScene = try? await request.scene
+            let scene = await getScene(location: coordinates)
+
+            uiViewController.scene = scene
         }
     }
     
-    var body: some View {
-        VStack {
-            if let scene = lookAroundScene {
-                LookAroundPreview(initialScene: scene)
-            } else {
-                ContentUnavailableView("No preview available", systemImage: "eye.slash")
+    func getScene(location: CLLocationCoordinate2D?) async -> MKLookAroundScene? {
+        if let latitude = coordinates?.latitude, let longitude = coordinates?.longitude {
+            let sceneRequest = MKLookAroundSceneRequest(coordinate: .init(latitude: latitude, longitude: longitude))
+
+            do {
+                return try await sceneRequest.scene
+            } catch {
+                return nil
             }
-        }
-        .onAppear() {
-            getLookAroundScene()
+        } else {
+            return nil
         }
     }
 }
 
 #Preview {
-    LookAroundView(item: mockedItems.first!)
+    LookAroundPreview(coordinates: mockedItems.first!.coordinates)
 }
