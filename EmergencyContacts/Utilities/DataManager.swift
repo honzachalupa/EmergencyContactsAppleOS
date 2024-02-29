@@ -36,7 +36,7 @@ class DataManager {
     } */
     
     func fetch(completion: @escaping (Result<[DataItem], Error>) -> Void) {
-        xy
+        xyz
         /* guard let apiKey = ProcessInfo.processInfo.environment["API_KEY"] else {
             print("Error: API_KEY not found")
             return
