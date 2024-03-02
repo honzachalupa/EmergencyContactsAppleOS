@@ -1,50 +1,83 @@
 import SwiftUI
 // import Contacts
 
-enum TabKey: String {
-    case services
-    case map
-    case list
-}
-
 struct IndexScreen: View {
+    var deviceInfo = getDeviceInfo();
+    
     @State private var isSheetOpened: Bool = true
     @State private var initialSheetDetent = PresentationDetent.medium
+    @State private var isIpadNavigationExpanded = NavigationSplitViewVisibility.all
     @State private var selectedTabKey: TabKey = .map
-    
-    func navigationTitleForSelectedTab(_ key: TabKey) -> String {
-        switch key {
-            case .services:
-                return String(localized: "Phone Numbers")
-            case .map:
-                return String(localized: "Map")
-            case .list:
-                return String(localized: "List")
-        }
-    }
+    @State private var selectedTabKey_iPad: TabKey? = .list
     
     var body: some View {
-        NavigationStack {
-            DataErrorHandlerView() {
-                TabView(selection: $selectedTabKey) {
-                    IzsScreen().tabItem {
-                        Label(navigationTitleForSelectedTab(.services), systemImage: "phone.fill")
-                    }.tag(TabKey.services)
-                    
-                    MapScreen().tabItem {
+        if deviceInfo.deviceName == .iPad && deviceInfo.isFullscreen == false {
+            NavigationSplitView(columnVisibility: $isIpadNavigationExpanded) {
+                List(selection: $selectedTabKey_iPad) {
+                    Section {
                         Label(navigationTitleForSelectedTab(.map), systemImage: "map")
-                    }.tag(TabKey.map)
+                            .tag(TabKey.map)
+                        
+                        Label(navigationTitleForSelectedTab(.list), systemImage: "list.bullet")
+                            .tag(TabKey.list)
                     
-                    ItemsListScreen().tabItem {
-                        Label(navigationTitleForSelectedTab(.list),systemImage: "list.bullet")
-                    }.tag(TabKey.list)
+                        Label(navigationTitleForSelectedTab(.phoneNumbers), systemImage: "phone.fill")
+                            .tag(TabKey.phoneNumbers)
+                    }
                 }
-                .navigationTitle(navigationTitleForSelectedTab(selectedTabKey))
-                .toolbarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        NavigationLink(destination: SettingsView()) {
-                            Image(systemName: "gearshape")
+                .navigationTitle("Menu")
+            } detail: {
+                switch selectedTabKey_iPad {
+                    case .map: MapScreen()
+                    case .phoneNumbers: IzsScreen()
+                    default: ItemsListScreen()
+                }
+            }
+            .navigationSplitViewStyle(.balanced)
+        } else if deviceInfo.deviceName == .iPad {
+            NavigationSplitView(columnVisibility: $isIpadNavigationExpanded) {
+                List(selection: $selectedTabKey_iPad) {
+                    Section {
+                        Label(navigationTitleForSelectedTab(.list), systemImage: "list.bullet")
+                            .tag(TabKey.list)
+                    
+                        Label(navigationTitleForSelectedTab(.phoneNumbers), systemImage: "phone.fill")
+                            .tag(TabKey.phoneNumbers)
+                    }
+                }
+                .navigationTitle("Menu")
+            } content: {
+                switch selectedTabKey_iPad {
+                    case .phoneNumbers: IzsScreen()
+                    default: ItemsListScreen()
+                }
+            } detail: {
+                MapScreen()
+            }
+            .navigationSplitViewStyle(.balanced)
+        } else {
+            NavigationStack {
+                DataErrorHandlerView() {
+                    TabView(selection: $selectedTabKey) {
+                        IzsScreen().tabItem {
+                            Label(navigationTitleForSelectedTab(.phoneNumbers), systemImage: "phone.fill")
+                        }.tag(TabKey.phoneNumbers)
+                        
+                        MapScreen().tabItem {
+                            Label(navigationTitleForSelectedTab(.map), systemImage: "map")
+                        }.tag(TabKey.map)
+                        
+                        ItemsListScreen().tabItem {
+                            Label(navigationTitleForSelectedTab(.list),systemImage: "list.bullet")
+                        }.tag(TabKey.list)
+                    }
+                    .navigationTitle(navigationTitleForSelectedTab(selectedTabKey))
+                    .toolbarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .topBarTrailing) {
+                            NavigationLink(destination: SettingsView()) {
+                                Image(systemName: "gearshape")
+                            }
                         }
                     }
                 }

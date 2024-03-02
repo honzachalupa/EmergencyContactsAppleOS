@@ -169,6 +169,9 @@
         }
       }
     },
+    "Hospitals" : {
+
+    },
     "International Emergency Service" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -231,6 +234,16 @@
         }
       }
     },
+    "Menu" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menu"
+          }
+        }
+      }
+    },
     "Municipal Police" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -272,6 +285,9 @@
           }
         }
       }
+    },
+    "Pharmacies" : {
+
     },
     "Pharmacy" : {
       "extractionState" : "manual",
@@ -358,6 +374,9 @@
           }
         }
       }
+    },
+    "Vets" : {
+
     },
     "Website" : {
       "localizations" : {

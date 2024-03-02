@@ -1,11 +1,5 @@
 import SwiftUI
 
-enum TabKey: String {
-    case services
-    case map
-    case list
-}
-
 struct IndexScreen: View {
     @State private var isSheetOpened: Bool = true
     @State private var initialSheetDetent = PresentationDetent.medium
@@ -13,7 +7,7 @@ struct IndexScreen: View {
     
     func navigationTitleForSelectedTab(_ key: TabKey) -> String {
         switch key {
-            case .services:
+            case .phoneNumbers:
                 return String(localized: "Phone Numbers")
             case .map:
                 return String(localized: "Map")
@@ -27,8 +21,8 @@ struct IndexScreen: View {
             DataErrorHandlerView() {
                 TabView(selection: $selectedTabKey) {
                     IzsScreen().tabItem {
-                        Label(navigationTitleForSelectedTab(.services), systemImage: "phone.fill")
-                    }.tag(TabKey.services)
+                        Label(navigationTitleForSelectedTab(.phoneNumbers), systemImage: "phone.fill")
+                    }.tag(TabKey.phoneNumbers)
                     
                     MapScreen(isZoomEnabled: false).tabItem {
                         Label(navigationTitleForSelectedTab(.map), systemImage: "map")
