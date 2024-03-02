@@ -1,5 +1,4 @@
 import SwiftUI
-// import Contacts
 
 enum TabKey: String {
     case services
@@ -7,7 +6,7 @@ enum TabKey: String {
     case list
 }
 
-struct ContentView: View {
+struct IndexScreen: View {
     @State private var isSheetOpened: Bool = true
     @State private var initialSheetDetent = PresentationDetent.medium
     @State private var selectedTabKey: TabKey = .map
@@ -27,51 +26,32 @@ struct ContentView: View {
         NavigationStack {
             DataErrorHandlerView() {
                 TabView(selection: $selectedTabKey) {
-                    IzsView().tabItem {
+                    IzsScreen().tabItem {
                         Label(navigationTitleForSelectedTab(.services), systemImage: "phone.fill")
                     }.tag(TabKey.services)
                     
-                    MapView().tabItem {
+                    MapScreen(isZoomEnabled: false).tabItem {
                         Label(navigationTitleForSelectedTab(.map), systemImage: "map")
                     }.tag(TabKey.map)
                     
-                    ItemsListView().tabItem {
+                    ItemsListScreen().tabItem {
                         Label(navigationTitleForSelectedTab(.list),systemImage: "list.bullet")
                     }.tag(TabKey.list)
                 }
                 .navigationTitle(navigationTitleForSelectedTab(selectedTabKey))
-                .toolbarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        NavigationLink(destination: SettingsView()) {
-                            Image(systemName: "gearshape")
-                        }
-                    }
-                }
+                .tabViewStyle(.verticalPage)
             }
         }
-        /* .onAppear() {
-            var status: Bool = false
-            var store = CNContactStore()
-
-            store.requestAccess(for: CNEntityType.contacts) { hasPermission, error in
-                if error != nil {
-                    print(error!)
-                }
-                
-                status = hasPermission
-            }
-        } */
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct IndexScreen_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            IndexScreen()
                 .environment(\.locale, .init(identifier: "cs"))
             
-            ContentView()
+            IndexScreen()
                 .environment(\.locale, .init(identifier: "en"))
         }
     }

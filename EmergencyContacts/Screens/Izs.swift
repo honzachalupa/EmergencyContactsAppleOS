@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct IzsView: View {
+struct IzsScreen: View {
     var body: some View {
         VStack {
             Izs_ItemView(item: izsFeaturedItem, featured: true)
@@ -23,13 +23,13 @@ struct IzsView: View {
     }
 }
 
-struct IzsView_Previews: PreviewProvider {
+struct IzsScreen_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            IzsView()
+            IzsScreen()
                 .environment(\.locale, .init(identifier: "cs"))
             
-            IzsView()
+            IzsScreen()
                 .environment(\.locale, .init(identifier: "en"))
         }
     }

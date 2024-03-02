@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct MapView: View {
+struct MapScreen: View {
     var isZoomEnabled: Bool = true
     
     let locationManager = CLLocationManager()
@@ -53,7 +53,7 @@ struct MapView: View {
 }
 
 #Preview {
-    MapView()
+    MapScreen()
 }
 
 // https://developer.apple.com/forums/thread/744107#744107021

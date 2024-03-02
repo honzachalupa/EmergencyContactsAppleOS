@@ -5,7 +5,7 @@ import SwiftData
 struct EmergencyContactsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            IndexScreen()
         }
         // .modelContainer(for: [DataItem_.self])
     }

@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 
-struct ItemsListView: View {
+struct ItemsListScreen: View {
     let locationManager = CLLocationManager()
     
     @State var filteredDataGrouped: [DataItem.CategoryType: [DataItem]] = [:]
@@ -73,8 +73,8 @@ struct ItemsListView: View {
     }
 }
 
-struct ItemsListView_Previews: PreviewProvider {
+struct ItemsListScreen_Previews: PreviewProvider {
     static var previews: some View {
-        ItemsListView()
+        ItemsListScreen()
     }
 }

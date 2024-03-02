@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ItemsListView: View {
+struct ItemsListScreen: View {
     @StateObject var store = DataStore()
     
     var body: some View {
@@ -21,10 +21,10 @@ struct ItemsListView: View {
     }
 }
 
-struct ItemsListView_Previews: PreviewProvider {
+struct ItemsListScreen_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ItemsListView()
+            ItemsListScreen()
         }
     }
 }
