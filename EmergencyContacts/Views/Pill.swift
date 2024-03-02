@@ -5,7 +5,7 @@ struct PillView: View {
     
     var body: some View {
         Text(value)
-            .font(.caption2)
+            .font(.caption)
             .foregroundStyle(.white)
             .lineLimit(1)
             .padding(.horizontal, 10)

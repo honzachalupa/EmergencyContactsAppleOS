@@ -46,7 +46,7 @@ struct ItemsList_FilterView: View {
                     Picker(selection: $selectedKeyword,
                            label: Text("Sub-category")
                     ) {
-                        ForEach(keywords, id: \.self) {
+                        ForEach(keywords.filter { $0 != "adult-care" }, id: \.self) {
                             Text(getKeywordLabel($0))
                                 .tag($0)
                         }
