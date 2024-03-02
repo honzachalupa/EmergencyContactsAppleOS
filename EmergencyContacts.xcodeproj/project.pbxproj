@@ -799,7 +799,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmergencyContacts/Misc/EmergencyContacts.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"EmergencyContacts/Misc/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -850,7 +850,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmergencyContacts/Misc/EmergencyContacts.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"EmergencyContacts/Misc/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV9V3GJPT;
 				ENABLE_HARDENED_RUNTIME = YES;
