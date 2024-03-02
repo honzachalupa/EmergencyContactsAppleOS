@@ -93,45 +93,12 @@
         }
       }
     },
-    "Districts" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Městské části"
-          }
-        }
-      }
-    },
     "E-mail" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "E-mail"
-          }
-        }
-      }
-    },
-    "Emergency Contacts" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SOS kontakty"
-          }
-        }
-      }
-    },
-    "Error: %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Chyba: %@"
           }
         }
       }
@@ -170,7 +137,14 @@
       }
     },
     "Hospitals" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pohotovosti"
+          }
+        }
+      }
     },
     "International Emergency Service" : {
       "extractionState" : "manual",
@@ -287,7 +261,14 @@
       }
     },
     "Pharmacies" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non-stop lékárny"
+          }
+        }
+      }
     },
     "Pharmacy" : {
       "extractionState" : "manual",
@@ -376,7 +357,14 @@
       }
     },
     "Vets" : {
-
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veterinární pocotovosti"
+          }
+        }
+      }
     },
     "Website" : {
       "localizations" : {

@@ -11,7 +11,7 @@ struct IndexScreen: View {
     @State private var selectedTabKey_iPad: TabKey? = .list
     
     var body: some View {
-        if deviceInfo.deviceName == .iPad && deviceInfo.isFullscreen == false {
+        /* if deviceInfo.deviceName == .iPad {
             NavigationSplitView(columnVisibility: $isIpadNavigationExpanded) {
                 List(selection: $selectedTabKey_iPad) {
                     Section {
@@ -34,7 +34,7 @@ struct IndexScreen: View {
                 }
             }
             .navigationSplitViewStyle(.balanced)
-        } else if deviceInfo.deviceName == .iPad {
+        } else */ if deviceInfo.deviceName == .iPad {
             NavigationSplitView(columnVisibility: $isIpadNavigationExpanded) {
                 List(selection: $selectedTabKey_iPad) {
                     Section {
