@@ -28,6 +28,7 @@ struct ItemsListScreen: View {
                         }
                     }
                 }
+                .listStyle(.grouped)
             }
             
             ItemsList_FilterView(filteredDataGrouped: $filteredDataGrouped)

@@ -44,7 +44,7 @@ struct MapScreen: View {
                     // LookAroundPreview(coordinates: marker.coordinates)
                 }
                 .padding()
-                .presentationDetents([.height(200)])
+                .presentationDetents([.medium])
         }
         .onAppear {
             locationManager.requestWhenInUseAuthorization()

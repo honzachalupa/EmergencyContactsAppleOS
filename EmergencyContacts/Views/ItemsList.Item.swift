@@ -5,7 +5,27 @@ struct ItemsList_ItemView: View {
     var item: DataItem
 
     var body: some View {
+        let initialPosition: MapCameraPosition = .region(
+            MKCoordinateRegion(
+                center: item.coordinates,
+                span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)
+            )
+        )
+        
         VStack(alignment: .leading) {
+            Map(initialPosition: initialPosition) {
+                Marker(
+                    item.name,
+                    systemImage: "cross.fill",
+                    coordinate: item.coordinates
+                )
+                .tint(getCategoryColor(item.category))
+            }
+            .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+            .cornerRadius(10)
+            .aspectRatio(2, contentMode: .fit)
+            .padding(.bottom)
+            
             Text(item.name)
                 .font(.headline)
             
@@ -16,7 +36,7 @@ struct ItemsList_ItemView: View {
                             PillView(value: getKeywordLabel(keyword))
                         }
                     }
-                    .padding(.bottom, 5)
+                    .padding(.bottom)
                 }
             }
             
@@ -26,8 +46,6 @@ struct ItemsList_ItemView: View {
                 Text("(\(note))")
                     .opacity(0.6)
             }
-            
-            Spacer()
             
             HStack() {
                 Spacer()
@@ -56,8 +74,10 @@ struct ItemsList_ItemView: View {
                     })
                 }
             }
+            
+            Spacer()
         }
-        .padding(.vertical, 10)
+        .padding(.vertical)
     }
 }
 
