@@ -1,4 +1,4 @@
-import MapKit
+import CoreLocation
 
 struct Address: Decodable {
     typealias StreetType = String
@@ -30,7 +30,8 @@ struct DataItem: Decodable, Identifiable {
     typealias CoordinatesType = CLLocationCoordinate2D
     typealias KeywordType = String
     typealias KeywordsType = [KeywordType]?
-
+    typealias DistanceType = Double?
+    
     let id: IdType
     let category: CategoryType
     let name: NameType
@@ -38,6 +39,7 @@ struct DataItem: Decodable, Identifiable {
     let contact: ContactType
     let coordinates: CoordinatesType
     let keywords: KeywordsType
+    var distance: DistanceType
 }
 
 private enum CodingKeys: String, CodingKey {
@@ -48,6 +50,7 @@ private enum CodingKeys: String, CodingKey {
     case contact
     case coordinates
     case keywords
+    case distance
 }
 
 extension CLLocationCoordinate2D: Decodable {
@@ -62,13 +65,19 @@ extension CLLocationCoordinate2D: Decodable {
 extension DataItem {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        do { distance = try container.decode(Double.self, forKey: .distance) }
+        catch { distance = 0 }
+        
+        do { keywords = try container.decode([String].self, forKey: .keywords) }
+        catch { keywords = [] }
+        
         id = try container.decode(IdType.self, forKey: .id)
         category = try container.decode(CategoryType.self, forKey: .category)
         name = try container.decode(NameType.self, forKey: .name)
         address = try container.decode(AddressType.self, forKey: .address)
         contact = try container.decode(ContactType.self, forKey: .contact)
         coordinates = try container.decode(CoordinatesType.self, forKey: .coordinates)
-        keywords = try container.decode(KeywordsType.self, forKey: .keywords)
     }
 }
 
@@ -86,24 +95,26 @@ extension DataItem: Hashable {
         hasher.combine(coordinates.latitude)
         hasher.combine(coordinates.longitude)
         hasher.combine(keywords)
+        hasher.combine(distance)
     }
 }
 
 extension DataItem: Equatable {
     static func == (lhs: DataItem, rhs: DataItem) -> Bool {
         return
-            lhs.id == rhs.id &&
-            lhs.category == rhs.category &&
-            lhs.name == rhs.name &&
-            lhs.address.street == rhs.address.street &&
-            lhs.address.district == rhs.address.district &&
-            lhs.address.note == rhs.address.note &&
-            lhs.contact.phoneNumbers == rhs.contact.phoneNumbers &&
-            lhs.contact.emailAddress == rhs.contact.emailAddress &&
-            lhs.contact.url == rhs.contact.url &&
-            lhs.coordinates.latitude == rhs.coordinates.latitude &&
-            lhs.coordinates.longitude == rhs.coordinates.longitude &&
-            lhs.keywords == rhs.keywords
+        lhs.id == rhs.id &&
+        lhs.category == rhs.category &&
+        lhs.name == rhs.name &&
+        lhs.address.street == rhs.address.street &&
+        lhs.address.district == rhs.address.district &&
+        lhs.address.note == rhs.address.note &&
+        lhs.contact.phoneNumbers == rhs.contact.phoneNumbers &&
+        lhs.contact.emailAddress == rhs.contact.emailAddress &&
+        lhs.contact.url == rhs.contact.url &&
+        lhs.coordinates.latitude == rhs.coordinates.latitude &&
+        lhs.coordinates.longitude == rhs.coordinates.longitude &&
+        lhs.keywords == rhs.keywords &&
+        lhs.distance == rhs.distance
     }
 }
 
@@ -123,7 +134,8 @@ let mockedItems: [DataItem] = [
             url: "https:/www.url.com/"
         ),
         coordinates: CLLocationCoordinate2D(latitude: 50.08804, longitude: 14.42076),
-        keywords: ["adult-care", "child-care"]
+        keywords: ["adult-care", "child-care"],
+        distance: nil
     ),
     DataItem(
         id: 102,
@@ -140,7 +152,8 @@ let mockedItems: [DataItem] = [
             url: "https:/www.url.com/"
         ),
         coordinates: CLLocationCoordinate2D(latitude: 50.08804, longitude: 14.42076 + 1),
-        keywords: nil
+        keywords: nil,
+        distance: nil
     ),
     DataItem(
         id: 201,
@@ -157,7 +170,8 @@ let mockedItems: [DataItem] = [
             url: "https:/www.url.com/"
         ),
         coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 1, longitude: 14.42076),
-        keywords: ["stomatology"]
+        keywords: ["stomatology"],
+        distance: nil
     ),
     DataItem(
         id: 202,
@@ -174,7 +188,8 @@ let mockedItems: [DataItem] = [
             url: "https:/www.url.com/"
         ),
         coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 1, longitude: 14.42076 + 1),
-        keywords: nil
+        keywords: nil,
+        distance: nil
     ),
     DataItem(
         id: 301,
@@ -191,7 +206,8 @@ let mockedItems: [DataItem] = [
             url: "https:/www.url.com/"
         ),
         coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 2, longitude: 14.42076),
-        keywords: nil
+        keywords: nil,
+        distance: nil
     ),
     DataItem(
         id: 302,
@@ -208,6 +224,7 @@ let mockedItems: [DataItem] = [
             url: "https:/www.url.com/"
         ),
         coordinates: CLLocationCoordinate2D(latitude: 50.08804 - 2, longitude: 14.42076 + 1),
-        keywords: nil
+        keywords: nil,
+        distance: nil
     )
 ]

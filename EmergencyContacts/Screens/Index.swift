@@ -2,8 +2,6 @@ import SwiftUI
 // import Contacts
 
 struct IndexScreen: View {
-    var deviceInfo = getDeviceInfo();
-    
     @State private var isSheetOpened: Bool = true
     @State private var initialSheetDetent = PresentationDetent.medium
     @State private var isIpadNavigationExpanded = NavigationSplitViewVisibility.all
@@ -11,30 +9,7 @@ struct IndexScreen: View {
     @State private var selectedTabKey_iPad: TabKey? = .list
     
     var body: some View {
-        /* if deviceInfo.deviceName == .iPad {
-            NavigationSplitView(columnVisibility: $isIpadNavigationExpanded) {
-                List(selection: $selectedTabKey_iPad) {
-                    Section {
-                        Label(navigationTitleForSelectedTab(.map), systemImage: "map")
-                            .tag(TabKey.map)
-                        
-                        Label(navigationTitleForSelectedTab(.list), systemImage: "list.bullet")
-                            .tag(TabKey.list)
-                    
-                        Label(navigationTitleForSelectedTab(.phoneNumbers), systemImage: "phone.fill")
-                            .tag(TabKey.phoneNumbers)
-                    }
-                }
-                .navigationTitle("Menu")
-            } detail: {
-                switch selectedTabKey_iPad {
-                    case .map: MapScreen()
-                    case .phoneNumbers: IzsScreen()
-                    default: ItemsListScreen()
-                }
-            }
-            .navigationSplitViewStyle(.balanced)
-        } else */ if deviceInfo.deviceName == .iPad {
+        if getDeviceName() == .iPad {
             NavigationSplitView(columnVisibility: $isIpadNavigationExpanded) {
                 List(selection: $selectedTabKey_iPad) {
                     Section {

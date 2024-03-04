@@ -1,5 +1,5 @@
 import SwiftUI
-import MapKit
+import CoreLocation
 
 struct ItemsListScreen: View {
     let locationManager = CLLocationManager()
@@ -17,6 +17,7 @@ struct ItemsListScreen: View {
                         Section {
                             ForEach(filteredDataGrouped[category] ?? [], id: \.name) { item in
                                 ItemsList_ItemView(item: item)
+                                    .padding(.top)
                             }
                         } header: {
                             HStack {

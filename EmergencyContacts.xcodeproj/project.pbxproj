@@ -31,7 +31,7 @@
 		2145E7112B8769AE00494930 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2145E7072B8769AD00494930 /* Assets.xcassets */; };
 		2145E7132B8769AE00494930 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E7092B8769AD00494930 /* Map.swift */; };
 		2145E7142B8769AE00494930 /* ItemsList.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70A2B8769AD00494930 /* ItemsList.Item.swift */; };
-		2145E7152B8769AE00494930 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataManager.swift */; };
+		2145E7152B8769AE00494930 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataStore.swift */; };
 		2145E7162B8769AE00494930 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70C2B8769AE00494930 /* Item.swift */; };
 		2145E7172B8769AE00494930 /* DataErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataErrorHandler.swift */; };
 		2145E7182B8769AE00494930 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
@@ -68,7 +68,7 @@
 		21F2BFD82B876BFE0007BF31 /* ItemsList.Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F2BFD72B876BFE0007BF31 /* ItemsList.Item.swift */; };
 		21F2BFD92B876C650007BF31 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2145E70E2B8769AE00494930 /* Localizable.xcstrings */; };
 		21F2BFE32B87973D0007BF31 /* DataErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70D2B8769AE00494930 /* DataErrorHandler.swift */; };
-		21F2BFE42B8797780007BF31 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataManager.swift */; };
+		21F2BFE42B8797780007BF31 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145E70B2B8769AD00494930 /* DataStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,7 +140,7 @@
 		2145E7072B8769AD00494930 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2145E7092B8769AD00494930 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		2145E70A2B8769AD00494930 /* ItemsList.Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsList.Item.swift; sourceTree = "<group>"; };
-		2145E70B2B8769AD00494930 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		2145E70B2B8769AD00494930 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		2145E70C2B8769AE00494930 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2145E70D2B8769AE00494930 /* DataErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataErrorHandler.swift; sourceTree = "<group>"; };
 		2145E70E2B8769AE00494930 /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		21EB968A2B8CD7BA0075A2F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2145E70B2B8769AD00494930 /* DataManager.swift */,
+				2145E70B2B8769AD00494930 /* DataStore.swift */,
 				2159BC132B93CAC300E16DD0 /* Colors.swift */,
 				2159BC172B93CB0B00E16DD0 /* Formatting.swift */,
 				2159BC1B2B93CB2E00E16DD0 /* Localization.swift */,
@@ -550,7 +550,7 @@
 				2159BC182B93CB0B00E16DD0 /* Formatting.swift in Sources */,
 				2145E7142B8769AE00494930 /* ItemsList.Item.swift in Sources */,
 				2145E7192B8769AE00494930 /* ItemsList.swift in Sources */,
-				2145E7152B8769AE00494930 /* DataManager.swift in Sources */,
+				2145E7152B8769AE00494930 /* DataStore.swift in Sources */,
 				2159BC142B93CAC300E16DD0 /* Colors.swift in Sources */,
 				21EB968C2B8CD7FF0075A2F5 /* Izs.Item.swift in Sources */,
 				2159BC202B93CD7E00E16DD0 /* Navigation.swift in Sources */,
@@ -592,7 +592,7 @@
 				213BCA642B8F6EBF00C2B420 /* Pill.swift in Sources */,
 				211387152B8768F300F5422B /* Index.swift in Sources */,
 				21F2BFE32B87973D0007BF31 /* DataErrorHandler.swift in Sources */,
-				21F2BFE42B8797780007BF31 /* DataManager.swift in Sources */,
+				21F2BFE42B8797780007BF31 /* DataStore.swift in Sources */,
 				211387132B8768F300F5422B /* EmergencyContactsWatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

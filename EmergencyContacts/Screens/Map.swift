@@ -38,11 +38,7 @@ struct MapScreen: View {
             MapUserLocationButton()
         }
         .sheet(item: $selectedMarker) { marker in
-                VStack {
-                    ItemsList_ItemView(item: marker)
-                    
-                    // LookAroundPreview(coordinates: marker.coordinates)
-                }
+            ItemsList_ItemView(item: marker)
                 .padding()
                 .presentationDetents([.medium])
         }
@@ -106,9 +102,6 @@ struct MapScreen: View {
 } */
 
 /*
-    import SwiftUI
-    import MapKit
-
     struct MarkerItem: Identifiable {
      let id = UUID();
      let name: String;

@@ -3,7 +3,7 @@ import MapKit
 
 struct ItemsList_ItemView: View {
     var item: DataItem
-
+    
     var body: some View {
         let initialPosition: MapCameraPosition = .region(
             MKCoordinateRegion(
@@ -24,7 +24,7 @@ struct ItemsList_ItemView: View {
             .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
             .cornerRadius(10)
             .aspectRatio(2, contentMode: .fit)
-            .padding(.bottom)
+            .padding(.bottom, 5)
             
             Text(item.name)
                 .font(.headline)
@@ -40,7 +40,23 @@ struct ItemsList_ItemView: View {
                 }
             }
             
-            Text("\(item.address.street), \(item.address.district)")
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(item.address.street)
+                    Text(item.address.district)
+                }
+                
+                Spacer()
+                
+                if let distance = item.distance {
+                    if distance > 0 {
+                        PillView(
+                            value: "\(String(format: "%.1f", distance)) km",
+                            variant: .gray
+                        )
+                    }
+                }
+            }
             
             if let note = item.address.note {
                 Text("(\(note))")
@@ -49,7 +65,7 @@ struct ItemsList_ItemView: View {
             
             HStack() {
                 Spacer()
-            
+                
                 NavigateButton(name: item.name, coordinates: item.coordinates)
                     .buttonStyle(.bordered)
                 
@@ -77,7 +93,6 @@ struct ItemsList_ItemView: View {
             
             Spacer()
         }
-        .padding(.vertical)
     }
 }
 
@@ -92,10 +107,10 @@ struct NavigateButton: View {
             )
             
             destination.name = name
-                    
+            
             MKMapItem.openMaps(
-              with: [destination],
-              launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+                with: [destination],
+                launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
             )
         }
     }
@@ -103,7 +118,7 @@ struct NavigateButton: View {
 
 struct WebButton: View {
     let url: DataItem.ContactType.UrlType
-
+    
     var body: some View {
         if let checkedUrl = url,
            let urlString = URL(string: checkedUrl) {
@@ -116,19 +131,19 @@ struct WebButton: View {
 
 struct MailButton: View {
     let emailAddress: String?
-
+    
     var body: some View {
         if let emailAddress = emailAddress, let emailAddressUrl = URL(string: "mailto://\(emailAddress)") {
-                Button("E-mail") {
-                    UIApplication.shared.open(emailAddressUrl)
-                }
+            Button("E-mail") {
+                UIApplication.shared.open(emailAddressUrl)
             }
+        }
     }
 }
 
 struct CallButton: View {
     let phoneNumbers: DataItem.ContactType.PhoneNumbersType
-
+    
     var body: some View {
         if phoneNumbers.count == 1, let phoneUrl = URL(string: "tel://\(formatPhoneNumber(phoneNumbers[0]))") {
             Button("Call") {
